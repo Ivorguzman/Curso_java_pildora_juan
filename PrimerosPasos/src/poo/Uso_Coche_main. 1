@@ -1,0 +1,55 @@
+package poo;
+
+public class Uso_Vehiculo_main {
+
+	public static void main(String[] args) {
+	
+		Coche renault = new Coche();// Ejemplar de clase coche
+		Coche fiat = new Coche();// Ejemplar de clase coche
+
+
+
+		// Utilazando los metodos getters setters);
+		renault.setColor("Azul");
+		System.out.println("Color de coche  : " + renault.getColor());
+
+		renault.setAsientos("si");
+		System.out.println(renault.getAsientos());
+
+		renault.setClimatizador("si");
+		System.out.println(renault.getclimatizador());
+
+		renault.setPesoTotaCoche(500);
+		System.out.println("El Peso Total del coche es : " + renault.getPesoTotaCoche());
+
+		renault.setPrecio_coche(10000);
+		System.out.printf("Precio final del coche: %.2f ", renault.getPrecio_coche());
+
+
+		System.out.printf("%nrenault(Uso_Vehiculo_main.java) ==>" + renault);
+		System.out.printf("%n%n********************************************");
+		System.out.printf("%n********************************************%n%n");
+
+
+		fiat.setColor("Azul");
+		System.out.println("Color de coche  : " + fiat.getColor());
+
+		fiat.setAsientos("si");
+		System.out.println(fiat.getAsientos());
+
+		fiat.setClimatizador("si");
+		System.out.println(fiat.getclimatizador());
+
+		fiat.setPesoTotaCoche(500);
+		System.out.println("El Peso Total del coche es : " + fiat.getPesoTotaCoche());
+
+		fiat.setPrecio_coche(10000);
+		System.out.printf("Precio final del coche: %.2f ", fiat.getPrecio_coche());
+		System.out.printf("fiat(Uso_Vehiculo_main.java) ==> " + fiat);
+
+	}
+
+}
+
+
+
