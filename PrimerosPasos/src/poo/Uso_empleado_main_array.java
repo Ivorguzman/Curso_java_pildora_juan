@@ -215,13 +215,29 @@ public class Uso_empleado_main_array {
 
 
 		// *********** POLIMORFISMO ( Principio de sustitucion) **************
-		Jefatura jefe_RRHH = new Jefatura("Alex Guzmán", 55000, 2006, 9, 25);
-		jefe_RRHH.setIncentivo(2570);
-
+		Jefatura jefe_RRHH = new Jefatura("Alex Zambrano", 55000, 2006, 9, 25);
 		misEmpleados[4] = jefe_RRHH;// almasenado objetos de sub-clase < HIJA >(Jefatura)
+
+		jefe_RRHH.setIncentivo(1000000);
+
+		// Casting de Objeto(convertir objeto de un tipo en otro): Jefatura jefaFinanzas
+		// = (Jefatura) misEmpleados[4]
+		Jefatura jefaFinanzas = (Jefatura) misEmpleados[1];
+
+
+
+
+		// *********** POLIMORFISMO ( Principio de sustitucion) **************
 		misEmpleados[5] = new Jefatura("Maria", 95000, 1999, 5, 26);// almasenado objetos de sub clase HIJA (Jefatura)
 
 
+		// Casting de Objeto(convertir objeto de un tipo en otro): Jefatura jefaFinanzas
+		// = (Jefatura) misEmpleados[5]
+		Jefatura jefaCompras = (Jefatura) misEmpleados[5];
+
+		jefaCompras.setIncentivo(3000000);
+
+		System.out.printf("      Insetivo para los Jefes ==>  %.2f%n%n ", jefaCompras.getIncentivo());
 
 		/*
 		 * // **** BUCLE FOR TRADICIONAL ***** for (int i = 0; i < misEmpleado.length;
@@ -239,10 +255,19 @@ public class Uso_empleado_main_array {
 		 * 
 		 */
 
-		System.out.printf("      Insetivo para los Jefes ==>  %.2f%n%n ", jefe_RRHH.getIncentivo());
+		// System.out.printf(" Insetivo para los Jefes ==> %.2f%n%n ",
+		// jefe_RRHH.getIncentivo());
+		
 
+		
+
+
+
+
+		
 		for (EmpleadoArry e : misEmpleados) {
-			// Variable etipo empleado ==> EmpleadoArry (e)
+
+
 			e.setSubeSueldo(5);// Metodo para aumentar el sueldo 5%
 
 			System.out.println("Valor de  e ==> " + e);
@@ -252,7 +277,7 @@ public class Uso_empleado_main_array {
 
 			/*
 			 * Llama al metodo getSueldo() de EmpleadoArry Ó Llama al metodo getSueldo() de
-			 * Jefatura en: misEmpleados[5] y misEmpleados[6] segun contexto. (ENLAZADO
+			 * Jefatura en: misEmpleados[5] y misEmpleados[6] segun contexto: (ENLAZADO
 			 * DINAMICO DE LA MVJ)
 			 */
 			System.out.printf("Sueldo %.2f$%n:", e.getSueldo());
