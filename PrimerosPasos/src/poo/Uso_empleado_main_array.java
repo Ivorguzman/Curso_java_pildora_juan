@@ -30,8 +30,8 @@ class EmpleadoArry {
 	 * double sueldo, int ahno,int mes, int,dia) **
 	 */
 	public EmpleadoArry(String nombre, double sueldo, int ahno, int mes, int dia) {
-		System.out.println("29 this ==>" + this);
-		System.out.println("------------------------------------------------------");
+		// System.out.println("29 this ==>" + this);
+		// System.out.println("------------------------------------------------------");
 
 		++contador;
 		this.id = contador;
@@ -52,8 +52,7 @@ class EmpleadoArry {
 
 	// ** SOBRE CARGA DEL CONSTRUCTOR firma -_Numero ,tipo, y orden de parametro_-
 	public EmpleadoArry() { // Constructor por defecto << Sin Parametros >>
-		++contador;
-		this.id = contador;
+
 
 	}
 
@@ -166,7 +165,7 @@ public class Uso_empleado_main_array {
 
 	public static void main(String[] args) {
 
-		EmpleadoArry[] misEmpleados = new EmpleadoArry[6];
+		EmpleadoArry[] misEmpleados = new EmpleadoArry[7];
 		Jefatura[] misJefes = new Jefatura[2];
 
 		
@@ -207,37 +206,45 @@ public class Uso_empleado_main_array {
 		misEmpleados[1] = new EmpleadoArry("Ana López", 95000, 1995, 06, 02);
 		misEmpleados[2] = new EmpleadoArry("Maria Martín", 105000, 2002, 03, 15);
 		misEmpleados[3] = new EmpleadoArry("Alexande Guzmán"); // Constructoe sobrecargado
-		// misEmpleado[4] = new EmpleadoArry(); // Constructor sobre cargado.
+
+		misEmpleados[4] = new EmpleadoArry(); // Constructor sobre cargado.
+		misEmpleados[5] = new EmpleadoArry(); //
+		misEmpleados[6] = new EmpleadoArry(); //
+
 
 		System.out.println("******************************************************");
 		System.out.println("");
 
 
 
-		// *********** POLIMORFISMO ( Principio de sustitucion) **************
+		// *********** POLIMORFISMO ( Principio de sustitucion Metodo1) **************
 		Jefatura jefe_RRHH = new Jefatura("Alex Zambrano", 55000, 2006, 9, 25);
 		misEmpleados[4] = jefe_RRHH;// almasenado objetos de sub-clase < HIJA >(Jefatura)
-
 		jefe_RRHH.setIncentivo(1000000);
-
-		// Casting de Objeto(convertir objeto de un tipo en otro): Jefatura jefaFinanzas
-		// = (Jefatura) misEmpleados[4]
-		Jefatura jefaFinanzas = (Jefatura) misEmpleados[1];
+		System.out.printf("      Insetivo para  jefe_RRHH ==>  %.2f%n%n ", jefe_RRHH.getIncentivo());
 
 
 
 
-		// *********** POLIMORFISMO ( Principio de sustitucion) **************
-		misEmpleados[5] = new Jefatura("Maria", 95000, 1999, 5, 26);// almasenado objetos de sub clase HIJA (Jefatura)
-
-
+		// *********** POLIMORFISMO ( Principio de Casting Metodo2) **************
+		misEmpleados[5] = new Jefatura("6_Maria", 95000, 1999, 5, 26);// almasenado objetos de sub clase HI (Jefatura)
 		// Casting de Objeto(convertir objeto de un tipo en otro): Jefatura jefaFinanzas
 		// = (Jefatura) misEmpleados[5]
-		Jefatura jefaCompras = (Jefatura) misEmpleados[5];
-
+		Jefatura jefaCompras =  (Jefatura) misEmpleados[5];
 		jefaCompras.setIncentivo(3000000);
+		System.out.printf("      Insetivo para  jefaCompras ==>  %.2f%n%n ", jefaCompras.getIncentivo());
 
-		System.out.printf("      Insetivo para los Jefes ==>  %.2f%n%n ", jefaCompras.getIncentivo());
+
+
+
+		// *********** POLIMORFISMO ( Principio de sustitucion repitiendo Metodo1)
+		// **************
+		Jefatura jefaCompras2 = new Jefatura("Pepe Perez", 35000, 2006, 9, 25);
+		misEmpleados[6] = jefaCompras2;// almasenado objetos de sub-clase < hija > tipo(Jefatura) en la clase < PADRE >
+										// tipo(EmpleadoArry)
+		jefaCompras2.setIncentivo(9000000);
+		System.out.printf("      Insetivo para  jefaCompras2 ==>  %.2f%n%n ", jefaCompras2.getIncentivo());
+
 
 		/*
 		 * // **** BUCLE FOR TRADICIONAL ***** for (int i = 0; i < misEmpleado.length;
@@ -258,8 +265,8 @@ public class Uso_empleado_main_array {
 		// System.out.printf(" Insetivo para los Jefes ==> %.2f%n%n ",
 		// jefe_RRHH.getIncentivo());
 		
-
 		
+
 
 
 
@@ -270,10 +277,11 @@ public class Uso_empleado_main_array {
 
 			e.setSubeSueldo(5);// Metodo para aumentar el sueldo 5%
 
-			System.out.println("Valor de  e ==> " + e);
-			System.out.println("Valor de  misEmpleado ==> " + misEmpleados);
-			System.out.println("Id:" + e.getId());
+			// System.out.println("Valor de e ==> " + e);
+			// System.out.println("Valor de misEmpleado ==> " + misEmpleados);
+			System.out.println("Id :" + e.getId());
 			System.out.println("Nombre :" + e.getNombre());
+			
 
 			/*
 			 * Llama al metodo getSueldo() de EmpleadoArry Ó Llama al metodo getSueldo() de
