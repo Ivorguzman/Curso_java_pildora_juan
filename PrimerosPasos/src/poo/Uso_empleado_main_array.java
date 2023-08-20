@@ -12,7 +12,7 @@ import java.util.GregorianCalendar;
  *
  * */
 
-// Clase EmpleadoArry
+// Clase Empleado
 class EmpleadoArry {
 
 
@@ -43,7 +43,7 @@ class EmpleadoArry {
 	}
 
 
-	// ** SOBRE CARGA DEL CONSTRUCTOR firma -Numero ,tipo, y  orden  de  parametro- EmpleadoArry(String nombre) ***
+	// ** SOBRE CARGA DEL CONSTRUCTOR firma -Numero ,tipo, y  orden  de  parametro- Empleado(String nombre) ***
 	public EmpleadoArry(String nombre) {
 
 		this(nombre, 30000, 2000, 01, 01); // Invocando constructor de la misma (clase tercer uso del this).
@@ -103,7 +103,7 @@ class EmpleadoArry {
 
 
 }
-// Fin Clase EmpleadoArry
+// Fin Clase Empleado
 
 
 // Clase Jefatura
@@ -241,7 +241,7 @@ public class Uso_empleado_main_array {
 		// **************
 		Jefatura jefaCompras2 = new Jefatura("Pepe Perez", 35000, 2006, 9, 25);
 		misEmpleados[6] = jefaCompras2;// almasenado objetos de sub-clase < hija > tipo(Jefatura) en la clase < PADRE >
-										// tipo(EmpleadoArry)
+										// tipo(Empleado)
 		jefaCompras2.setIncentivo(9000000);
 		System.out.printf("      Insetivo para  jefaCompras2 ==>  %.2f%n%n ", jefaCompras2.getIncentivo());
 
@@ -262,7 +262,7 @@ public class Uso_empleado_main_array {
 		 * 
 		 */
 
-		// System.out.printf(" Insetivo para los Jefes ==> %.2f%n%n ",
+		// System.out.printf(" Insetivo para los Jefes_V50 ==> %.2f%n%n ",
 		// jefe_RRHH.getIncentivo());
 		
 		
@@ -284,7 +284,7 @@ public class Uso_empleado_main_array {
 			
 
 			/*
-			 * Llama al metodo getSueldo() de EmpleadoArry Ó Llama al metodo getSueldo() de
+			 * Llama al metodo getSueldo() de Empleado Ó Llama al metodo getSueldo() de
 			 * Jefatura en: misEmpleados[5] y misEmpleados[6] segun contexto: (ENLAZADO
 			 * DINAMICO DE LA MVJ)
 			 */
