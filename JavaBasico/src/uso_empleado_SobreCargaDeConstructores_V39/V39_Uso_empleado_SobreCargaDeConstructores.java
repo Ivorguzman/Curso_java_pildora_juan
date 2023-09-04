@@ -1,4 +1,4 @@
-package poo;
+package uso_empleado_SobreCargaDeConstructores_V39;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -12,7 +12,7 @@ import java.util.GregorianCalendar;
  *
  * */
 
-// Clase Empleado
+// Clase EmpleadoPruebas_38
 class EmpleadoArry {
 
 
@@ -43,7 +43,7 @@ class EmpleadoArry {
 	}
 
 
-	// ** SOBRE CARGA DEL CONSTRUCTOR firma -Numero ,tipo, y  orden  de  parametro- Empleado(String nombre) ***
+	// ** SOBRE CARGA DEL CONSTRUCTOR firma -Numero ,tipo, y  orden  de  parametro- EmpleadoPruebas_38(String nombre) ***
 	public EmpleadoArry(String nombre) {
 
 		this(nombre, 30000, 2000, 01, 01); // Invocando constructor de la misma (clase tercer uso del this).
@@ -103,7 +103,7 @@ class EmpleadoArry {
 
 
 }
-// Fin Clase Empleado
+// Fin Clase EmpleadoPruebas_38
 
 
 // Clase Jefatura
@@ -161,7 +161,7 @@ public double getSueldo() { // realazandolo sobre escribiendo el metodo getSueld
 
 // ********* CLASE PRINCIPAL (main) ****************
 
-public class Uso_empleado_main_array {
+public class V39_Uso_empleado_SobreCargaDeConstructores {
 
 	public static void main(String[] args) {
 
@@ -170,37 +170,6 @@ public class Uso_empleado_main_array {
 
 		
 
-
-		/*
-		 * System.out.println(misEmpleado[0].nombre); // El indice tiene atributos
-		 * [0].XXXXX System.out.println(misEmpleado[0].altaContrato);
-		 * System.out.println(misEmpleado[0].sueldo);
-		 * System.out.println(misEmpleado[1].nombre);
-		 * System.out.println(misEmpleado[1].altaContrato);
-		 * System.out.println(misEmpleado[1].sueldo);
-		 * System.out.println(misEmpleado[2].nombre);
-		 * System.out.println(misEmpleado[2].altaContrato);
-		 * System.out.println(misEmpleado[2].sueldo);
-		 */
-
-		/*
-		 * System.out.println(misEmpleado[0].getSueldo());
-		 * System.out.println(misEmpleado[1].getSueldo());
-		 * System.out.println(misEmpleado[2].getSueldo());
-		 */
-
-		/*
-		 * System.out.println(misEmpleado[0].getAltaContrato());
-		 * System.out.println(misEmpleado[1].getAltaContrato());
-		 * System.out.println(misEmpleado[2].getAltaContrato());
-		 */
-
-		/*
-		 * misEmpleado[0].setNombre("pedro"); System.out.println(misEmpleado[0].nombre);
-		 * System.out.println(misEmpleado[0].getNombre());
-		 * System.out.println(misEmpleado[0].nombre = "Juan");
-		 * System.out.println(misEmpleado[0].nombre);
-		 */
 
 		misEmpleados[0] = new EmpleadoArry("Ivor Guzmán", 85000, 1990, 12, 17); // almasenado objetos de super-clase <
 		misEmpleados[1] = new EmpleadoArry("Ana López", 95000, 1995, 06, 02);
@@ -241,7 +210,7 @@ public class Uso_empleado_main_array {
 		// **************
 		Jefatura jefaCompras2 = new Jefatura("Pepe Perez", 35000, 2006, 9, 25);
 		misEmpleados[6] = jefaCompras2;// almasenado objetos de sub-clase < hija > tipo(Jefatura) en la clase < PADRE >
-										// tipo(Empleado)
+										// tipo(EmpleadoPruebas_38)
 		jefaCompras2.setIncentivo(9000000);
 		System.out.printf("      Insetivo para  jefaCompras2 ==>  %.2f%n%n ", jefaCompras2.getIncentivo());
 
@@ -284,7 +253,7 @@ public class Uso_empleado_main_array {
 			
 
 			/*
-			 * Llama al metodo getSueldo() de Empleado Ó Llama al metodo getSueldo() de
+			 * Llama al metodo getSueldo() de EmpleadoPruebas_38 Ó Llama al metodo getSueldo() de
 			 * Jefatura en: misEmpleados[5] y misEmpleados[6] segun contexto: (ENLAZADO
 			 * DINAMICO DE LA MVJ)
 			 */

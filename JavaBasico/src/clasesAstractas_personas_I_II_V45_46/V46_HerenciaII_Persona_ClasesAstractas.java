@@ -1,11 +1,10 @@
-package poo_Interface_V49_52;
+package clasesAstractas_personas_I_II_V45_46;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
 
 
 // ****** CLASE PERSONA (){...} ABSTRACTA ******
-
 abstract class Persona {
 
 	// Varaibles de Instancia
@@ -18,29 +17,24 @@ abstract class Persona {
 			throw new IllegalArgumentException("ERROR: Pearmetro Tranferido erroneo ");
 		}
 		this.nombre = nombre;
+
+
 	}
 
-
-	// Getter Setters
+	// Getter
 	public String getNombre() {
 		return this.nombre;
 	}
 
 
-	/**
-	 * @author Alexander
-	 * @METODOS ASTRACTO:
-	 *          Metodo Astracto OJO solo se defini no se construye NO TIENEN
-	 *          IMPLEMENTACION PROPIA
-	 *          Las clases astractas no pueden ser instanciadas por no tener
-	 *          accionar el cual se crea en la clase que herede de esta(clase)
-	 *          ya que esta obligada a sobreescribier el metodo (astracto) con la
-	 *          implementación que le indique.
-	 */
+	// Descripcion de Metodo Astracto OJO solo se defini no se construye
+	public abstract String getDescripcion();
 
-	public abstract String descripcion();
+	@Override public String toString() {
+		return "Persona [nombre=" + this.nombre + "]";
+	}
 
-	// ****** FIN METODOS ABSTRACTA() ****
+
 
 }
 // ****** FIN CLASE PERSONA ABSTRACTA(){...} ****
@@ -50,8 +44,8 @@ abstract class Persona {
 
 
 
-// ****** CLASE EmpleadoArry2 (){...} ******
-class EmpleadoArry2 extends Persona {
+// ****** CLASE Empleado2 (){...} ******
+class Empleado2 extends Persona {
 
 	// Varaibles de Instancia
 	private Double sueldo;// primitivo
@@ -65,7 +59,7 @@ class EmpleadoArry2 extends Persona {
 	 * ** CONSTRUCTOR firma (String nombre,double sueldo, int ahno,int mes, int,dia)
 	 * **
 	 */
-	public EmpleadoArry2(String nombre, double sueldo, int ahno, int mes, int dia) {
+	public Empleado2(String nombre, double sueldo, int ahno, int mes, int dia) {
 		super(nombre);
 		if (sueldo <= 0 || ahno <= 0 || mes <= 0 || dia < 0) {
 			throw new IllegalArgumentException("ERROR: Pearmetro Tranferido erroneo ");
@@ -82,8 +76,8 @@ class EmpleadoArry2 extends Persona {
 
 
 @Override
-public String descripcion() {
-	return "Id Empleado:" + this.id + "\nNombre :" + this.getNombre() + "\nSueldo Empleado :" + this.sueldo;
+public String getDescripcion() {
+	return "Id EmpleadoPruebas_38:" + this.id + "\nNombre :" + this.getNombre() + "\nSueldo EmpleadoPruebas_38 :" + this.sueldo;
 	
 }
 
@@ -128,8 +122,13 @@ public String descripcion() {
 	// Fin de GETTERS Y SETTERS
 
 
+	@Override public String toString() {
+		return "Empleado2 [sueldo=" + this.sueldo + ", altaContrato=" + this.altaContrato + ", id=" + this.id + "]";
+	}
+
+
 }
-// ****** FIN CLASE EmpleadoArry2 (...){} ******
+// ****** FIN CLASE Empleado2 (...){} ******
 
 
 
@@ -152,10 +151,14 @@ class Alumnos extends Persona {
 
 	}
 
-	@Override public String descripcion() {
+	@Override public String getDescripcion() {
 		return "Nombre: " + this.getNombre() + "\n" + "Carrera: " + this.carrea;
 
 
+	}
+
+	@Override public String toString() {
+		return "Alumnos [carrea=" + this.carrea + "]";
 	}
 
 }
@@ -185,10 +188,10 @@ class Alumnos extends Persona {
 //********* CLASE PRINCIPAL (){...} (main) ****************
 
 /**
- * The Class Uso_Persona_main.
+ * The Class V46_HerenciaII_Persona_ClasesAstractas.
  */
-// CLASE Uso_Persona_main(){..}
-public class Uso_Persona_main {
+// CLASE V46_HerenciaII_Persona_ClasesAstractas(){..}
+public class V46_HerenciaII_Persona_ClasesAstractas {
 
 	/**
 	 * The main method.
@@ -197,10 +200,10 @@ public class Uso_Persona_main {
 	 */
 	public static void main(String[] args) {
 
-		EmpleadoArry2[] misEmpleados2 = new EmpleadoArry2[3];
-		misEmpleados2[0] = new EmpleadoArry2("Alexander", 2500, 2024, 05, 01);
-		misEmpleados2[1] = new EmpleadoArry2("Ivor", 3500, 2024, 06, 01);
-		misEmpleados2[2] = new EmpleadoArry2("Guzmán", 4000, 2024, 07, 01);
+		Empleado2[] misEmpleados2 = new Empleado2[3];
+		misEmpleados2[0] = new Empleado2("Alexander", 2500, 2024, 05, 01);
+		misEmpleados2[1] = new Empleado2("Ivor", 3500, 2024, 06, 01);
+		misEmpleados2[2] = new Empleado2("Guzmán", 4000, 2024, 07, 01);
 		
 		
 		Alumnos[] estudiante = new Alumnos[2];
@@ -208,23 +211,23 @@ public class Uso_Persona_main {
 		estudiante[1] = new Alumnos("Ivor Guzmán", "Ing. de la Información");
 		
 
-		// Creado array de Obj. Tipo Personas con Obj. tipo EmpleadoArry2() y Obj. tipo
+		// Creado array de Obj. Tipo Personas con Obj. tipo Empleado2() y Obj. tipo
 		// Alumnos()
 		Persona[] lasPersonas = new Persona[2];
-		lasPersonas[0] = new EmpleadoArry2("Luis Conde", 5000, 2009, 02, 25);
+		lasPersonas[0] = new Empleado2("Luis Conde", 5000, 2009, 02, 25);
 		lasPersonas[1] = new Alumnos("Ana Lopes", "Biologia");
 
 
 
 		
 
-		for (EmpleadoArry2 e : misEmpleados2) {
+		for (Empleado2 e : misEmpleados2) {
 
 			System.out.println("___________________________________________");
 			System.out.println("Valor de e ==> " + e);
-			System.out.println("Valor de EmpleadoArry2 ==> " + misEmpleados2);
+			System.out.println("Valor de Empleado2 ==> " + misEmpleados2);
 			System.out.println("");
-			System.out.println(e.descripcion());
+			System.out.println(e.getDescripcion());
 			System.out.println(e.getAltaContrato());
 			System.out.println("");
 
@@ -235,7 +238,7 @@ public class Uso_Persona_main {
 			System.out.println("Valor de e ==> " + e);
 			System.out.println("Valor de estudiante ==> " + estudiante);
 			System.out.println("");
-			System.out.println(e.descripcion());
+			System.out.println(e.getDescripcion());
 			System.out.println("");
 
 		}
@@ -245,14 +248,14 @@ public class Uso_Persona_main {
 			System.out.println("Valor de e ==> " + e);
 			System.out.println("Valor de estudiante ==> " + lasPersonas);
 			System.out.println("");
-			System.out.println(e.descripcion());
+			System.out.println(e.getDescripcion());
 			System.out.println("");
 
 		}
 	}
 
 }
-// FIN CLASE CLASE Uso_Persona_main(){..}
+// FIN CLASE CLASE V46_HerenciaII_Persona_ClasesAstractas(){..}
 
 
 

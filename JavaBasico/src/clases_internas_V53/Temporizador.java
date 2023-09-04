@@ -1,4 +1,4 @@
-package poo_clases_internas_V53;
+package clases_internas_V53;
 
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;

@@ -1,4 +1,4 @@
-package poo;
+package variableStatic_Uso__empleado_pruebas_V37;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -9,17 +9,17 @@ import java.util.GregorianCalendar;
  *
  * */
 
-class EmpleadoPruebas {
+class EmpleadoPruebas_37 {
 
 	// Varaibles de Instancia
 	private String nombre;// primitivo
-	private Double sueldo;// primitivo
+	private double sueldo;// primitivo
 	private Date altaContrato;// referenciado (Tipo Objeto)
-	private final int id;
-	private static int idSiguiente = 1;
+	private int id;
+	private static int idSiguiente = 1; // Variable de Clase
 
 	// CONSTRUCTOR
-	public EmpleadoPruebas(String nombre, double sueldo, int ahno, int mes, int dia) {
+	public EmpleadoPruebas_37(String nombre, double sueldo, int ahno, int mes, int dia) {
 
 		this.nombre = nombre;
 		this.sueldo = sueldo;
@@ -31,16 +31,19 @@ class EmpleadoPruebas {
 
 
 	// GETTER Y SETTERS
+
+
+	public String getNombre() {
+		return this.nombre;
+	}
+
 	/**
-	 * @return el id
+	 * @return the id
 	 */
 	public int getId() {
 		return this.id;
 	}
 
-	public String getNombre() {
-		return this.nombre;
-	}
 
 	public void setNombre(String nombre) {
 		if (nombre != null) {
@@ -48,12 +51,12 @@ class EmpleadoPruebas {
 		}
 	}
 
-	public Double getSueldo() {
+	public double getSueldo() {
 		return this.sueldo;
 	}
 
-	public void setSueldo(Double sueldo) {
-		if (sueldo != null && sueldo > 0) {
+	public void setSueldo(double sueldo) {
+		if (sueldo > 0){
 			this.sueldo = sueldo;
 		}
 	}
@@ -81,23 +84,21 @@ class EmpleadoPruebas {
 
 // ********* CLASE PRINCIPAL (main) ****************
 
-public class Uso__empleado_pruebas {
+public class V37_VariableStatic_Uso__empleado_pruebas {
 
 	public static void main(String[] args) {
 
-		Empleado empleado_1 = new Empleado("Paco Gómez", 85000, 1990, 12, 17);
-		Empleado empleado_2 = new Empleado("Ana López", 95000, 1995, 06, 02);
-		Empleado empleado_3 = new Empleado("Maria Martín", 105000, 2002, 03, 15);
-		Empleado empleado_4 = new Empleado("Maria Martín", 105000, 2002, 03, 15);
+		EmpleadoPruebas_37 empleado_1 = new EmpleadoPruebas_37("Paco Gómez", 85000, 1990, 12, 17);
+		EmpleadoPruebas_37 empleado_2 = new EmpleadoPruebas_37("Ana López", 95000, 1995, 06, 02);
+		EmpleadoPruebas_37 empleado_3 = new EmpleadoPruebas_37("Maria Martín", 105000, 2002, 03, 15);
+		EmpleadoPruebas_37 empleado_4 = new EmpleadoPruebas_37("Maria Martín", 105000, 2002, 03, 15);
 
 		empleado_1.setSubeSueldo(5); // AUMENTO DEL SUELD EN 5%
 		empleado_2.setSubeSueldo(5); // AUMENTO DEL SUELD EN 5%
 		empleado_3.setSubeSueldo(5); // AUMENTO DEL SUELD EN 5%
 		empleado_4.setSubeSueldo(5); // AUMENTO DEL SUELD EN 5%
 
-		/*
-		 * // * * NOTA CON LA CLASE PRINSIPAL ESTA EN EL MISMO ARCHIVO SE PIERDE EL
-		 */
+		/* // * * NOTA CON LA CLASE PRINCIPAL ESTA EN EL MISMO ARCHIVO SE PIERDE EL */
 
 		System.out.println("ID : " + empleado_1.getId());
 		System.out.println("Nombre :" + empleado_1.getNombre());

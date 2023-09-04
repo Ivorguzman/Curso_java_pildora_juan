@@ -1,4 +1,4 @@
-package poo_Interface_V49_52;
+package interface_V49_52;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -14,7 +14,7 @@ import java.util.GregorianCalendar;
  *
  * */
 
-// Clase Empleado
+// Clase EmpleadoPruebas_38
 class Empleado implements Comparable, Trabajadores_V51 {
 
 
@@ -55,7 +55,7 @@ class Empleado implements Comparable, Trabajadores_V51 {
 		return Trabajadores_V51.bonus_base + gratificacion;
 	}
 
-	// ** SOBRE CARGA DEL CONSTRUCTOR firma -Numero ,tipo, y  orden  de  parametro- Empleado(String nombre) ***
+	// ** SOBRE CARGA DEL CONSTRUCTOR firma -Numero ,tipo, y  orden  de  parametro- EmpleadoPruebas_38(String nombre) ***
 	public Empleado(String nombre) {
 
 		this(nombre, 30000, 2000, 01, 01); // Invocando constructor de la misma (clase tercer uso del this).
@@ -138,14 +138,14 @@ class Empleado implements Comparable, Trabajadores_V51 {
 
 
 	@Override public String toString() {
-		return "Empleado [nombre=" + this.nombre + ", id=" + this.id + "]";
+		return "EmpleadoPruebas_38 [nombre=" + this.nombre + ", id=" + this.id + "]";
 	}
 
 
 
 
 }
-// Fin Clase Empleado
+// Fin Clase EmpleadoPruebas_38
 
 
 // Clase Jefatura
@@ -252,7 +252,7 @@ public class Uso_empleado_main_array {
 		// V43
 		Jefatura jefe_RRHH = new Jefatura("Alex Zambrano", 55000.34, 2006, 9, 25);
 		misEmpleados[4] = jefe_RRHH;// almasenado objetos de sub-clase < HIJA >(jefe_RRHH) en objeto < PADRE
-									// >(Empleado) ( JEFATURA EXTIENDE DE Empleado)
+									// >(EmpleadoPruebas_38) ( JEFATURA EXTIENDE DE EmpleadoPruebas_38)
 		jefe_RRHH.setIncentivo(1000000);
 		System.out.printf("      Insetivo para  jefe_RRHH ==>  %.2f%n%n ", jefe_RRHH.getIncentivo());
 
@@ -273,7 +273,7 @@ public class Uso_empleado_main_array {
 		// *** POLIMORFISMO ( Principio de sustitucion repitiendo Metodo1) ****** V43
 		Jefatura jefa_Finananzas = new Jefatura("Pepe Perez", 35000, 2006, 9, 25);
 		misEmpleados[6] = jefa_Finananzas;// almasenado objetos de sub-clase < hija > tipo(Jefatura) en objetos de clase <
-										// PADRE > (class Jefatura extends Empleado)
+										// PADRE > (class Jefatura extends EmpleadoPruebas_38)
 
 		jefa_Finananzas.setIncentivo(9000000);
 		System.out.printf("      Insetivo para  jefaCompras2 ==>  %.2f%n%n ", jefa_Finananzas.getIncentivo());
@@ -300,11 +300,11 @@ public class Uso_empleado_main_array {
 			System.out.println("  ");
 		}
 		if (misEmpleados[0] instanceof Empleado){
-			System.out.println(misEmpleados[0] + " es de tipo Empleado");
+			System.out.println(misEmpleados[0] + " es de tipo EmpleadoPruebas_38");
 			System.out.println("  ");
 		}
 		if (misEmpleados[5] instanceof Empleado){
-			System.out.println(misEmpleados[5] + " es de tipo Empleado");
+			System.out.println(misEmpleados[5] + " es de tipo EmpleadoPruebas_38");
 			System.out.println("  ");
 		}
 
@@ -334,7 +334,7 @@ public class Uso_empleado_main_array {
 				+ " Bonus : " + jefa_Finananzas.estableceBonus(500));
 
 
-		System.out.println("Bonus Empleado : " + "ID: " + misEmpleados[3].getId() + " " + "Nombre: "
+		System.out.println("Bonus EmpleadoPruebas_38 : " + "ID: " + misEmpleados[3].getId() + " " + "Nombre: "
 				+ misEmpleados[3].getNombre() + " " + "Bonus: " + misEmpleados[3].estableceBonus(200));
 
 		// _____________ Fin Metodo de interfaz Trabajadores V51 _____________
@@ -361,7 +361,7 @@ public class Uso_empleado_main_array {
 			
 
 			/*
-			 * Llama al metodo getSueldo() de Empleado Ó Llama al metodo getSueldo() de
+			 * Llama al metodo getSueldo() de EmpleadoPruebas_38 Ó Llama al metodo getSueldo() de
 			 * Jefatura en: misEmpleados[5] y misEmpleados[6] segun contexto: (ENLAZADO
 			 * DINAMICO DE LA MVJ)
 			 */

@@ -1,6 +1,6 @@
-package poo;
+package modificadoresDeAcceso_V47;
 
-public class V47_Clase1_poo {
+public class V47_Clase1_ModificadoresDeAcceso {
 	// Contructor por defecto
 
 

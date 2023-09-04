@@ -1,10 +1,11 @@
-package poo;
+package interface_V49_52;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
 
 
 // ****** CLASE PERSONA (){...} ABSTRACTA ******
+
 abstract class Persona {
 
 	// Varaibles de Instancia
@@ -19,14 +20,27 @@ abstract class Persona {
 		this.nombre = nombre;
 	}
 
-	// Getter
+
+	// Getter Setters
 	public String getNombre() {
 		return this.nombre;
 	}
 
 
-	// Descripcion de Metodo Astracto OJO solo se defini no se construye
-	public abstract String getDescripcion();
+	/**
+	 * @author Alexander
+	 * @METODOS ASTRACTO:
+	 *          Metodo Astracto OJO solo se defini no se construye NO TIENEN
+	 *          IMPLEMENTACION PROPIA
+	 *          Las clases astractas no pueden ser instanciadas por no tener
+	 *          accionar el cual se crea en la clase que herede de esta(clase)
+	 *          ya que esta obligada a sobreescribier el metodo (astracto) con la
+	 *          implementación que le indique.
+	 */
+
+	public abstract String descripcion();
+
+	// ****** FIN METODOS ABSTRACTA() ****
 
 }
 // ****** FIN CLASE PERSONA ABSTRACTA(){...} ****
@@ -36,7 +50,7 @@ abstract class Persona {
 
 
 
-// ****** CLASE EmpleadoArry2 (){...} ******
+// ****** CLASE Empleado2 (){...} ******
 class EmpleadoArry2 extends Persona {
 
 	// Varaibles de Instancia
@@ -68,8 +82,8 @@ class EmpleadoArry2 extends Persona {
 
 
 @Override
-public String getDescripcion() {
-	return "Id Empleado:" + this.id + "\nNombre :" + this.getNombre() + "\nSueldo Empleado :" + this.sueldo;
+public String descripcion() {
+	return "Id EmpleadoPruebas_38:" + this.id + "\nNombre :" + this.getNombre() + "\nSueldo EmpleadoPruebas_38 :" + this.sueldo;
 	
 }
 
@@ -115,7 +129,7 @@ public String getDescripcion() {
 
 
 }
-// ****** FIN CLASE EmpleadoArry2 (...){} ******
+// ****** FIN CLASE Empleado2 (...){} ******
 
 
 
@@ -138,7 +152,7 @@ class Alumnos extends Persona {
 
 	}
 
-	@Override public String getDescripcion() {
+	@Override public String descripcion() {
 		return "Nombre: " + this.getNombre() + "\n" + "Carrera: " + this.carrea;
 
 
@@ -171,9 +185,9 @@ class Alumnos extends Persona {
 //********* CLASE PRINCIPAL (){...} (main) ****************
 
 /**
- * The Class Uso_Persona_main.
+ * The Class V46_HerenciaII_Persona_ClasesAstractas.
  */
-// CLASE Uso_Persona_main(){..}
+// CLASE V46_HerenciaII_Persona_ClasesAstractas(){..}
 public class Uso_Persona_main {
 
 	/**
@@ -194,7 +208,7 @@ public class Uso_Persona_main {
 		estudiante[1] = new Alumnos("Ivor Guzmán", "Ing. de la Información");
 		
 
-		// Creado array de Obj. Tipo Personas con Obj. tipo EmpleadoArry2() y Obj. tipo
+		// Creado array de Obj. Tipo Personas con Obj. tipo Empleado2() y Obj. tipo
 		// Alumnos()
 		Persona[] lasPersonas = new Persona[2];
 		lasPersonas[0] = new EmpleadoArry2("Luis Conde", 5000, 2009, 02, 25);
@@ -208,9 +222,9 @@ public class Uso_Persona_main {
 
 			System.out.println("___________________________________________");
 			System.out.println("Valor de e ==> " + e);
-			System.out.println("Valor de EmpleadoArry2 ==> " + misEmpleados2);
+			System.out.println("Valor de Empleado2 ==> " + misEmpleados2);
 			System.out.println("");
-			System.out.println(e.getDescripcion());
+			System.out.println(e.descripcion());
 			System.out.println(e.getAltaContrato());
 			System.out.println("");
 
@@ -221,7 +235,7 @@ public class Uso_Persona_main {
 			System.out.println("Valor de e ==> " + e);
 			System.out.println("Valor de estudiante ==> " + estudiante);
 			System.out.println("");
-			System.out.println(e.getDescripcion());
+			System.out.println(e.descripcion());
 			System.out.println("");
 
 		}
@@ -231,14 +245,14 @@ public class Uso_Persona_main {
 			System.out.println("Valor de e ==> " + e);
 			System.out.println("Valor de estudiante ==> " + lasPersonas);
 			System.out.println("");
-			System.out.println(e.getDescripcion());
+			System.out.println(e.descripcion());
 			System.out.println("");
 
 		}
 	}
 
 }
-// FIN CLASE CLASE Uso_Persona_main(){..}
+// FIN CLASE CLASE V46_HerenciaII_Persona_ClasesAstractas(){..}
 
 
 

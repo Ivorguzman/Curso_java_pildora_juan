@@ -1,13 +1,13 @@
-package poo;
+package modificadoresDeAcceso_V47;
 
-import paquetePruebas_V47.V47_Clase3_PaquetePruebas;
+import modificadoresDeAcceso_paquetePruebas_V47.V47_Clase3_PaquetePruebas;
 
-public class V47_Clase2_Main_poo {
+public class V47_Clase2_Main_ModificadoresDeAcceso {
 
 	public static void main(String[] args) {
 
 		// Instanciando de Clase1
-		V47_Clase1_poo miobj = new V47_Clase1_poo();
+		V47_Clase1_ModificadoresDeAcceso miobj = new V47_Clase1_ModificadoresDeAcceso();
 
 		System.out.println(miobj.mivar_implicito);
 		miobj.mivar_implicito = 2;

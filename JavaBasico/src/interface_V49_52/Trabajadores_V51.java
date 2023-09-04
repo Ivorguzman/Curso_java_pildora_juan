@@ -1,4 +1,4 @@
-package poo_Interface_V49_52;
+package interface_V49_52;
 
 public interface Trabajadores_V51 {
 
