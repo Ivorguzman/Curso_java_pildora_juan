@@ -12,7 +12,7 @@ public class Conecta_Pruebas {
 
 		try{
 			// 1.CREAR CONEXION
-			Connection miConexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/productos", "root", "");
+			Connection miConexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/pruebasjava", "root", "");
 
 
 
