@@ -9,7 +9,7 @@ public class MiArrayList {
 
 	private int i = 0;
 
-
+	// **** METODOS() ****
 	public MiArrayList(int e) {
 		this.datosElementos = new Object[e];
 	}

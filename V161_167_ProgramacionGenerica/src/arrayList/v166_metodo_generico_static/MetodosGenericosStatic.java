@@ -1,13 +1,12 @@
-package arrayList.v166_metodo_generico;
+package arrayList.v166_metodo_generico_static;
 
-public class MetodosGenericos {
+public class MetodosGenericosStatic {
 
-	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		
 		// *******************************************************************
 		String nombres[] = { "Jose","Ana","Pepe" };
-		String personas = MisMatrices.<String>getElementos(nombres);
+		String personas = MisMatricesStatic.<String>getElementos(nombres);
 
 		System.out.println(personas + " Objeto tipo String");
 
@@ -16,7 +15,7 @@ public class MetodosGenericos {
 		
 		// *******************************************************************
 		Double numeros[] = { 1.2,2.3,3.4,4.5 };
-		String conteo = MisMatrices.<Double>getElementos(numeros);
+		String conteo = MisMatricesStatic.<Double>getElementos(numeros);
 
 		System.out.println(conteo.toString() + " Objeto tipo Double");
 		// *******************************************************************
@@ -24,19 +23,19 @@ public class MetodosGenericos {
 
 		// *******************************************************************
 		Integer numeros2[] = { 1,2,3,4 };
-		String conteo2 = MisMatrices.<Integer>getElementos(numeros2);
+		String conteo2 = MisMatricesStatic.<Integer>getElementos(numeros2);
 
 		System.out.println(conteo2.toString() + " Objeto tipo Integer");
 		// *******************************************************************
 
 
 		// *******************************************************************
-		Empleados listaEmpleados[] = { new Empleados("A", 27, 2000),new Empleados("B", 47,
-				4000),
-				new Empleados("C", 57, 6000),new Empleados("D", 37, 3000),new Empleados("E", 47, 3000) };
+		EmpleadosStatic listaEmpleados[] = { new EmpleadosStatic("A", 27, 2000),new EmpleadosStatic("B", 47,
+				4000),new EmpleadosStatic("C", 57,
+						6000),new EmpleadosStatic("D", 37, 3000),new EmpleadosStatic("E", 47, 3000) };
 
-		System.out.println(MisMatrices.<Empleados>getElementos(listaEmpleados) + " Objeto tipo Empleado");
-		System.out.println(listaEmpleados[0].dameDatos());
+		System.out.println(MisMatricesStatic.<EmpleadosStatic>getElementos(listaEmpleados) + " Objeto tipo Empleado");
+		System.out.println(EmpleadosStatic.dameDatos()); // Clase mas metodo()
 		// *******************************************************************
 
 
