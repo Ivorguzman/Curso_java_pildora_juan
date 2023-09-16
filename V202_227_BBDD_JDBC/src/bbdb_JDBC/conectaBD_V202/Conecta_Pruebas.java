@@ -24,7 +24,7 @@ public class Conecta_Pruebas {
 
 
 			// 3. EJECUTAR SQL
-			ResultSet miResultset = miStatemen.executeQuery("SELECT * FROM productos LIMIT 0 ,10");
+			ResultSet miResultset = miStatemen.executeQuery("SELECT DISTINCTROW  SECCION FROM productos");
 			Object objet = miResultset;
 			System.out.println(objet.toString());
 
@@ -38,10 +38,15 @@ public class Conecta_Pruebas {
 			// TODO 4.RECORRER EL RESULTSET
 			while (miResultset.next()){
 
-				System.out.printf(" %s \t %s \t %s %n", miResultset.getString("CODIGOARTICULO"),
-						miResultset.getString("NOMBREARTICULO"), miResultset.getString("PRECIO"));
+				System.out.printf(" %s \t %n", miResultset.getString("SECCION"));
 				System.out.println("___________________________________________"); // encabezados de salida
 
+
+				/*
+				 * System.out.printf(" %s \t %s \t %s %n", miResultset.getString("CODIGOARTICULO"),
+				 * miResultset.getString("NOMBREARTICULO"), miResultset.getString("PRECIO"));
+				 * System.out.println("___________________________________________"); // encabezados de salida
+				 */
 			}
 
 

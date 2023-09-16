@@ -2,7 +2,6 @@ package arrayList.v166_metodo_generico;
 
 public class MetodosGenericos {
 
-	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		
 		// *******************************************************************
