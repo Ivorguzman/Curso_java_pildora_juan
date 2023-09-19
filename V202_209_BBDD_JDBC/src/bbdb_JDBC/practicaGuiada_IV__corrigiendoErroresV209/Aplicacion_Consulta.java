@@ -1,4 +1,4 @@
-package bbdb_JDBC.practicaGuiada_IV__correccionesV209;
+package bbdb_JDBC.practicaGuiada_IV__corrigiendoErroresV209;
 
 
 import java.awt.BorderLayout;
@@ -23,8 +23,9 @@ import javax.swing.WindowConstants;
 class Marco_Aplicacion extends JFrame
 {
 	Connection miConexion;
+
 	@SuppressWarnings({
-			"unchecked", "rawtypes"
+			"unchecked"
 	})
 	// ***** CONSTRUCTOR *****
 	public Marco_Aplicacion()
@@ -52,20 +53,14 @@ class Marco_Aplicacion extends JFrame
 
 		botonConsulta.addActionListener(new ActionListener()
 		{
-
 			@Override public void actionPerformed(ActionEvent e)
 			{
 				Marco_Aplicacion.this.ejecutarConsulta();
 			}
 
-
 		});
 
 		this.add(botonConsulta, BorderLayout.SOUTH);
-
-
-
-
 
 		try
 		{
@@ -125,10 +120,15 @@ class Marco_Aplicacion extends JFrame
 	private JComboBox secciones;
 	private JComboBox paises;
 	private JTextArea resultado;
+
 	private PreparedStatement enviaConsultaSeccion;
-	private final String consultaSeccionParametrica = "SELECT  NOMBREARTICULO, SECCION, PRECIO, PAISDEORIGEN  FROM  productos  WHERE SECCION = ?";
+	private final String consultaSeccionParametrica = "SELECT CODIGOARTICULO, NOMBREARTICULO, PRECIO, PAISDEORIGEN  FROM  productos  WHERE SECCION = ?";
 
+	private PreparedStatement enviaConsultaPais;
+	private final String consultaPaisParametrica = "SELECT CODIGOARTICULO, NOMBREARTICULO, PRECIO, PAISDEORIGEN  FROM  productos  WHERE PAISDEORIGEN = ?";
 
+	private PreparedStatement enviaConsultaTodos;
+	private final String consultaTodosParametrica = "SELECT CODIGOARTICULO, NOMBREARTICULO, PRECIO, PAISDEORIGEN  FROM  productos  WHERE  SECCION = ? AND PAISDEORIGEN = ?";
 
 	// METOD QUE SE INVOCA CON EL BOTON JButton("Consulta");
 	private void ejecutarConsulta()
@@ -138,13 +138,50 @@ class Marco_Aplicacion extends JFrame
 		try
 		{
 			String seccion = (String) this.secciones.getSelectedItem();
-			this.enviaConsultaSeccion = this.miConexion.prepareStatement(this.consultaSeccionParametrica);
-			this.enviaConsultaSeccion.setString(1, seccion);
-			// EJECUTAR LA CONSULTA
-			rs = this.enviaConsultaSeccion.executeQuery();
+			String pais = (String) this.paises.getSelectedItem();
 
+			// Si se seleciono el Jcombobox secciones
+			if (!seccion.equals("Todos") && pais.equals("Todos"))
+			{
+				this.enviaConsultaSeccion = this.miConexion.prepareStatement(this.consultaSeccionParametrica);
+				this.enviaConsultaSeccion.setString(1, seccion);
+
+
+				// EJECUTAR LA CONSULTA
+				rs = this.enviaConsultaSeccion.executeQuery();
+
+				// Si se seleciono el Jcombobox pais
+			} else if (seccion.equals("Todos") && !pais.equals("Todos"))
+			{
+				this.enviaConsultaPais = this.miConexion.prepareStatement(this.consultaPaisParametrica);
+				this.enviaConsultaPais.setString(1, pais);
+				// EJECUTAR LA CONSULTA
+				rs = this.enviaConsultaPais.executeQuery();
+
+				// Si se selecioan ambos Jcombobox sección y pais
+			} else if (!seccion.equals("Todos") && !pais.equals("Todos"))
+			{
+				this.enviaConsultaTodos = this.miConexion.prepareStatement(this.consultaTodosParametrica);
+				this.enviaConsultaTodos.setString(1, seccion);
+				this.enviaConsultaTodos.setString(2, pais);
+
+
+
+				// EJECUTAR LA CONSULTA
+				rs = this.enviaConsultaTodos.executeQuery();
+			} else
+			{
+				this.resultado.append(
+						"*************************** Haga alguna selección *****************************");
+				// EJECUTAR LA CONSULTA
+				rs = this.enviaConsultaTodos.executeQuery();
+			}
+
+
+			this.resultado.setText(""); // Limpia la lamina resultado
 			while (rs.next())
 			{
+				this.resultado.append("\n ");
 				this.resultado.append(rs.getString(1));
 				this.resultado.append("  |  ");
 				this.resultado.append(rs.getString(2));
@@ -154,11 +191,10 @@ class Marco_Aplicacion extends JFrame
 				this.resultado.append(rs.getString(4));
 				this.resultado.append("\n ");
 				this.resultado.append(
-						"----------------------------------------------------------------------------------- ");
+						"_________________________________________________________________________________________________________");
 				this.resultado.append("\n ");
 
 			}
-
 
 		} catch(Exception e)
 		{
@@ -226,3 +262,22 @@ public class Aplicacion_Consulta
 
 }
 // FIN ******************************** MAIN ()***************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

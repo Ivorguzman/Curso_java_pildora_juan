@@ -23,10 +23,8 @@ import javax.swing.WindowConstants;
 class Marco_Aplicacion extends JFrame
 {
 	Connection miConexion;
-	@SuppressWarnings({
-			"unchecked", "rawtypes"
-	})
 	// ***** CONSTRUCTOR *****
+	@SuppressWarnings("unchecked")
 	public Marco_Aplicacion()
 	{
 

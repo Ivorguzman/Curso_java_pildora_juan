@@ -19,9 +19,7 @@ import javax.swing.WindowConstants;
 class Marco_Aplicacion extends JFrame
 {
 
-	@SuppressWarnings({
-			"unchecked", "rawtypes"
-	})
+	@SuppressWarnings("unchecked")
 	public Marco_Aplicacion()
 	{
 
@@ -124,10 +122,8 @@ class Marco_Aplicacion extends JFrame
 
 
 
-	@SuppressWarnings("rawtypes")
 	private JComboBox secciones;
 
-	@SuppressWarnings("rawtypes")
 	private JComboBox paises;
 
 	private JTextArea resultado;

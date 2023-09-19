@@ -1,4 +1,4 @@
-package bbdb_JDBC.practicaGuiada_MVC_V210_217.vista;
+package bbdb_JDBC.practicaGuiada_MVC.vista;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -9,12 +9,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+import bbdb_JDBC.practicaGuiada_MVC.controlador.ControladorCargaSeciones;
+
 @SuppressWarnings("serial")
 public class Marco_Aplicacion2 extends JFrame
 {
 
 	// ***** CONSTRUCTOR *****
-	@SuppressWarnings("unchecked")
+
 	public Marco_Aplicacion2()
 	{
 
@@ -39,13 +41,16 @@ public class Marco_Aplicacion2 extends JFrame
 		JButton botonConsulta = new JButton("Consulta");
 		this.add(botonConsulta, BorderLayout.SOUTH);
 
+		this.addWindowListener(new ControladorCargaSeciones(this));
+
+
 
 	}
 
 
 	// CAMPOS DE CLASES DE LOS JCOMBOOX
 
-	private JComboBox secciones;
+	public JComboBox secciones;
 	private JComboBox paises;
 	private JTextArea resultado;
 }
