@@ -7,13 +7,6 @@ public class Conexion
 {
 	Connection miConexion = null;
 
-	public Conexion() // 0J0 CON ESTE CONSTRUCTOR
-	{
-
-	}
-
-
-
 
 	public Connection getConexion()
 	{

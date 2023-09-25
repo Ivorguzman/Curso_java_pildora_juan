@@ -9,17 +9,16 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-import bbdb_JDBC.practicaGuiada_MVC.controlador.ControladorCargaSeciones;
+import bbdb_JDBC.practicaGuiada_MVC.controlador.ControladorBotonEjecuta;
+import bbdb_JDBC.practicaGuiada_MVC.controlador.ControladorCargaMenu;
 
 @SuppressWarnings("serial")
 public class Marco_Aplicacion2 extends JFrame
 {
 
 	// ***** CONSTRUCTOR *****
-
 	public Marco_Aplicacion2()
 	{
-
 		this.setTitle("Consulta BBDD");
 		this.setBounds(500, 300, 400, 400);
 		this.setLayout(new BorderLayout());
@@ -41,16 +40,20 @@ public class Marco_Aplicacion2 extends JFrame
 		JButton botonConsulta = new JButton("Consulta");
 		this.add(botonConsulta, BorderLayout.SOUTH);
 
-		this.addWindowListener(new ControladorCargaSeciones(this));
+		// Al hacer click en el botom consulta
+		botonConsulta.addActionListener(new ControladorBotonEjecuta(this));
 
-
+		// Al cargar la ventana
+		this.addWindowListener(new ControladorCargaMenu(this));
 
 	}
 
 
+
 	// CAMPOS DE CLASES DE LOS JCOMBOOX
 
+
 	public JComboBox secciones;
-	private JComboBox paises;
-	private JTextArea resultado;
+	public JComboBox paises;
+	public JTextArea resultado;
 }

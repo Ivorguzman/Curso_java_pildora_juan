@@ -15,7 +15,7 @@ public class Productos
 	public Productos()
 	{
 		this.$NOMBREARTICULO = "";
-		this.$SECCION = "";
+		this.$SECCION = null;
 		this.$PRECIO = "";
 		this.$PAISDEORIGEN = "";
 	}
@@ -75,12 +75,7 @@ public class Productos
 
 
 
-
-
-
-
 }
-
 
 
 

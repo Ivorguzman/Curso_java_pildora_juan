@@ -137,8 +137,11 @@ class Marco_Aplicacion extends JFrame
 		ResultSet rs = null;
 		try
 		{
+
+			// Almacenar seleccion del usuario
 			String seccion = (String) this.secciones.getSelectedItem();
 			String pais = (String) this.paises.getSelectedItem();
+
 
 			// Si se seleciono el Jcombobox secciones
 			if (!seccion.equals("Todos") && pais.equals("Todos"))

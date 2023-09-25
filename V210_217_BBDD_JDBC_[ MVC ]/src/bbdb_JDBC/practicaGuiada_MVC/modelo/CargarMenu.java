@@ -6,18 +6,20 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 
-public class CargaSecciones
+public class CargarMenu
 {
 
 	// Crear campo tipo Conexion
 	Conexion miConexion;
 
 	// Crear campo tipo ResultSet
-	public ResultSet rs;
+	public ResultSet rs_secciones;
+	public ResultSet rs_paises;
+
 
 
 	// COSTRUCTOR
-	public CargaSecciones()
+	public CargarMenu()
 	{
 		// Crear Objeto tipo Conexion() en campo miConexion
 		this.miConexion = new Conexion();
@@ -25,6 +27,7 @@ public class CargaSecciones
 
 
 	// Metodo para generar consultas y guardar las registros dentro del resultset y despues en el combobox secciones
+	@SuppressWarnings("null")
 	public String ejecutarConsulta()
 	{
 
@@ -40,42 +43,34 @@ public class CargaSecciones
 		{
 			// CONSULTA NORMAL (declaración SQL estática ) SIN PARAMETROS
 			Statement secciones = accesoBBDD.createStatement();
+			Statement paises = accesoBBDD.createStatement();
+
 
 			// CREACION DEL RESULTSET DE Los resultados de la CONSULTA A LA BASE DE DATOS
-			this.rs = secciones.executeQuery("SELECT  DISTINCTROW SECCION FROM productos");
+			this.rs_secciones = secciones.executeQuery("SELECT  DISTINCTROW SECCION FROM productos");
+			this.rs_paises = paises.executeQuery("SELECT  DISTINCTROW PAISDEORIGEN FROM productos");
 
 
-			// RECORRIDO DEL RESULTSET / USO DE LOS GETERS Y SETERS DE SECCION
 
-			while (this.rs.next())
-			{
-
-				// INSTANCIA DE LA CLASE PRODUCTO
-				miProducto = new Productos();
+			// INSTANCIA DE LA CLASE PRODUCTO
+			// miProducto = new Productos();
 
 
-				miProducto.set$SECCION(this.rs.getString(1));
-
-
-				return miProducto.get$SECCION();
-
-				// System.out.println(this.rs.getString(1));
-
-			}
+			miProducto.set$SECCION(this.rs_secciones.getString(1));
+			miProducto.set$PAISDEORIGEN(this.rs_paises.getString(1));
 
 			// CERRANDO EL RESULSET (LIBRANDO RECURSOS)
-			this.rs.close();
+			this.rs_secciones.close();
+			this.rs_paises.close();
+			accesoBBDD.close();
 
 		} catch(SQLException e)
 		{
+			System.out.println("Problema en ejecucion....");
 			e.printStackTrace();
 		}
-
-
 		return miProducto.get$SECCION();
-
 	}
-
 
 
 
