@@ -17,6 +17,7 @@ public class Transaccion_Productos
 		try
 		{
 			miConexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/pruebasjava", "root", "");
+			System.out.println("Nombre del driver de conección : " + miConexion.getClass().getName());
 			miConexion.setAutoCommit(false);
 			Statement miStatement = miConexion.createStatement();
 			String instruccionSql_1 = "DELETE FROM PRODUCTOS WHERE PAISDEORIGEN = 'ITALIA'";
@@ -28,6 +29,13 @@ public class Transaccion_Productos
 				miStatement.executeUpdate(instruccionSql_1);
 				miStatement.executeUpdate(instruccionSql_2);
 				miStatement.executeUpdate(instruccionSql_3);
+
+				/*
+				 * Una vez commiteada la transacción los cambios serán permanentes, por lo tanto, por
+				 * más que invoquemos el método rollback este no podrá deshacer lo que ya fue
+				 * commiteado.
+				 */
+
 				miConexion.commit();// Dando OK. a la transacción
 				System.out.println(" !  Transacción  exitosa !");
 			}
