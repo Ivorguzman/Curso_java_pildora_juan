@@ -34,19 +34,7 @@ public class Vehiculo<T> {
 }
 
 
-class MonoCicleta {
-	private String habilida;
 
-
-	public MonoCicleta(String habilida) {
-		this.habilida = habilida;
-	}
-
-
-	@Override public String toString() {
-		return "MonoCicleta [habilida=" + habilida + "]";
-	}
-	
 	
 
-}
+

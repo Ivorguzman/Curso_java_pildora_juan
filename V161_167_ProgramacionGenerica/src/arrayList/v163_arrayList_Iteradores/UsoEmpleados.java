@@ -43,22 +43,28 @@ public class UsoEmpleados {
 		System.out.println("El ArrayList tiene " + listaEmpleados.size() + " elementos");
 		System.out.println(" ");
 
+
 		// * Metod set y get de los ArrayList<o>
 
 		// * Metodo set(posicion,elemento),inserte un elemento en una posicion en
 		// concreto, (sustituye al elemento si existe que este el la posicion indicada
 		// en la inserción)
-		listaEmpleados.set(0, new Empleado("AA", 57, 3000));
+		listaEmpleados.set(3, new Empleado("AA", 57, 3000));
+
 
 
 		// Metodo .itarator() es una interfas Debuelve un objeto de tipo iterator
 		Iterator<Empleado> miIterador = listaEmpleados.iterator();
 
-		// Metodo .hasnext() nos dice si tenemos mas objetos dentro de la coleccion
+
+		// Metodo .hasnext() (Boolean) nos dice si tenemos mas objetos dentro de la coleccion CON TRUE O FALSER
 		while (miIterador.hasNext()){
 			Empleado empleado = miIterador.next();
 
+			System.out.println();
+			System.out.println(empleado);
 			System.out.println(empleado.dameDatos());
+			System.out.println();
 		}
 
 

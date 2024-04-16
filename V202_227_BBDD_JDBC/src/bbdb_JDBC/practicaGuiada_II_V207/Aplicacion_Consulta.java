@@ -24,7 +24,7 @@ class Marco_Aplicacion extends JFrame
 {
 	Connection miConexion;
 	@SuppressWarnings({
-			"unchecked", "rawtypes"
+			"unchecked"
 	})
 	// ***** CONSTRUCTOR *****
 	public Marco_Aplicacion()

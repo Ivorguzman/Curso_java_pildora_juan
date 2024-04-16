@@ -47,7 +47,7 @@ public class UsoEmpleados {
 		// * Metodo set(posicion,elemento),inserte un elemento en una posicion en
 		// concreto, (sustituye al elemento si existe que este el la posicion indicada
 		// en la inserción)
-		listaEmpleados.set(0, new Empleado("AA", 57, 3000));
+		listaEmpleados.set(3, new Empleado("**?**", 57, 3000));
 
 
 		// * Metodo get(int)
@@ -63,26 +63,28 @@ public class UsoEmpleados {
 		// *****************************************************
 
 		// Utilizando Bucle for Mejorado ( foreach())
-		System.out.println("** Impresion con el bucle for Mejorado (foreach(){..}) ** ");
+		System.out.println("** Impresion con el bucle for MEJORADO  (foreach(){..}) ** ");
 		System.out.println("********************************************************************** ");
 
-		for (Empleado e : listaEmpleados){
+		for (Empleado empleado : listaEmpleados){
 			// System.out.println(listaEmpleados);
-			System.out.println(e.dameDatos());
+			System.out.println(empleado.dameDatos());
 
 		}
 
 
-		// Utilizando Bucle e for clasico(for(...){..} )
+		// Utilizando Bucle empleado for clasico(for(...){..} )
 		System.out.println("********************************************************************** ");
 		System.out.println(" ");
 		System.out.println(" ");
-		System.out.println("** Impresion con el bucle for clasico(for(...){..} ) ** ");
+		System.out.println("** Impresion con el bucle for CLASICO (for(...){..} ) ** ");
 		System.out.println("********************************************************************** ");
 
 		for (int i = 0; i < listaEmpleados.size(); i++){
 			Empleado empleadoArray = listaEmpleados.get(i);
 			System.out.println(empleadoArray.dameDatos());
+
+
 		}
 		System.out.println("********************************************************************** ");
 		System.out.println(" ");
@@ -90,7 +92,10 @@ public class UsoEmpleados {
 		System.out.println("** Copiando ArrayList a Array convencional con metod get de ArrayList<0> ** ");
 		System.out.println("** Impresion  Array convencional con el bucle for clasico(for(...){..} ) ** ");
 		System.out.println("********************************************************************** ");
+
+
 		Empleado arrayEmpleados[] = new Empleado[listaEmpleados.size()];
+
 
 		for (int i = 0; i < arrayEmpleados.length; i++){
 
@@ -99,6 +104,8 @@ public class UsoEmpleados {
 			System.out.println(arrayEmpleados[i].dameDatos());
 
 		}
+
+
 		System.out.println("********************************************************************** ");
 		System.out.println(" ");
 		System.out.println(" ");

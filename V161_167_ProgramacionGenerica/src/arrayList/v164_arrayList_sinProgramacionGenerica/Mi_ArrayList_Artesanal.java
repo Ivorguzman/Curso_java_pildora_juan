@@ -2,19 +2,18 @@ package arrayList.v164_arrayList_sinProgramacionGenerica;
 
 // ESTA CLASE MANEJA CUALQUIE TIPO DE OBJETO (Object)
 // Creando nuestra propia clase ArayList.
-public class MiArrayList {
+public class Mi_ArrayList_Artesanal {
 
 
 	private Object[] datosElementos;
-
 	private int i = 0;
 
-	// **** METODOS() ****
-	public MiArrayList(int e) {
-		this.datosElementos = new Object[e];
+	// **** Constructor ****
+	public Mi_ArrayList_Artesanal(int elemento) {
+		this.datosElementos = new Object[elemento];
 	}
 
-	// ESTA CLASE MANEJA CUALQUIE TIPO DE OBJETO (Object)
+	// ESTOS METODOS MANEJAN CUALQUIE TIPO DE OBJETO (Object)
 	public Object get(int i) {
 
 		return this.datosElementos[i];
