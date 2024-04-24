@@ -124,14 +124,35 @@ class Uso_Empleado implements Comparable, Itf_Trabajadores_V51 {
 		// Casting de Objeto(convertir objeto de un tipo en otro): de Object a (Uso_Empleado)
 		Uso_Empleado otroEmpleado = (Uso_Empleado) miObjeto;
 
+
 		/*
 		 * if (this.id < otroEmpleado.id){
-		 * 
+		 * System.out.println();
+		 * System.out.println("++++++ INICIO Analisis como compara compareTo(Object miObjeto) +++++++++ ");
+		 * System.out.println("this.sueldo ==>" + this.sueldo);
+		 * System.out.println("otroEmpleado.sueldo ==>" + otroEmpleado.sueldo);
+		 * System.out.println("VALOR = -1");
+		 * System.out.println("++++++ FIN Analisis como compara compareTo(Object miObjeto) +++++++++ ");
+		 * System.out.println();
 		 * return -1;
 		 * }
 		 * if (this.id > otroEmpleado.id){
+		 * System.out.println();
+		 * System.out.println("++++++ INICIO Analisis como compara compareTo(Object miObjeto) +++++++++ ");
+		 * System.out.println("this.sueldo ==>" + this.sueldo);
+		 * System.out.println("otroEmpleado.sueldo ==>" + otroEmpleado.sueldo);
+		 * System.out.println("VALOR = 1");
+		 * System.out.println("++++++ FIN Analisis como compara compareTo(Object miObjeto) +++++++++ ");
+		 * System.out.println();
 		 * return 1;
 		 * }
+		 * System.out.println();
+		 * System.out.println("++++++ INICIO Analisis como compara compareTo(Object miObjeto) +++++++++ ");
+		 * System.out.println("this.sueldo ==>" + this.sueldo);
+		 * System.out.println("otroEmpleado.sueldo ==>" + otroEmpleado.sueldo);
+		 * System.out.println("VALOR = 0");
+		 * System.out.println("++++++ FIN Analisis como compara compareTo(Object miObjeto) +++++++++ ");
+		 * System.out.println();
 		 * return 0;
 		 */
 		
