@@ -138,9 +138,9 @@ public class Uso_Empleado_Main {
 		// ********************* Aumentar sueldo Epleados *************************
 		System.out.println(" ");
 		// Metodo para aumentar el sueldo 5%
-		for (Uso_Empleado e : misEmpleados){
+		for (Uso_Empleado emp : misEmpleados){
 
-			e.setSubeSueldo(5);
+			emp.setSubeSueldo(5);
 
 		}
 

@@ -58,7 +58,7 @@ class Uso_Empleado implements Comparable, Itf_Trabajadores_V51 {
 	public Uso_Empleado(String nombre) {
 
 		this(nombre, 30, 2000, 01, 01); // Invocando constructor de la misma clase (tercer uso del this() con[parentesis] ).
-		
+
 	}
 
 	// ** SOBRE CARGA DEL CONSTRUCTOR **
@@ -70,14 +70,14 @@ class Uso_Empleado implements Comparable, Itf_Trabajadores_V51 {
 	// GETTER Y SETTERS
 	public int getId() {
 		return this.id;
-	}
-	;
+	};
+
 	public String getNombre() {
 		return this.nombre;
 	}
 
 	public void setNombre(String nombre) {
-		if (nombre != null) {
+		if (nombre != null){
 			this.nombre = nombre;
 		}
 	}
@@ -101,7 +101,7 @@ class Uso_Empleado implements Comparable, Itf_Trabajadores_V51 {
 	public void setAltaContrato(Date altaContrato) {
 
 
-		if (altaContrato != null) {
+		if (altaContrato != null){
 			throw new IllegalArgumentException("Monto tiene que ser  positivo < Mayor a 0 >");
 		}
 		this.altaContrato = altaContrato;
@@ -109,7 +109,7 @@ class Uso_Empleado implements Comparable, Itf_Trabajadores_V51 {
 
 	public void setSubeSueldo(double porcentaje) {
 
-		if (porcentaje <= 0) {
+		if (porcentaje <= 0){
 			throw new IllegalArgumentException("Monto tiene que ser  positivo < Mayor a 0 >");
 		}
 		double aumento = this.sueldo * porcentaje / 100;
@@ -155,39 +155,39 @@ class Uso_Empleado implements Comparable, Itf_Trabajadores_V51 {
 		 * System.out.println();
 		 * return 0;
 		 */
-		
 
 
-		  if (this.sueldo < otroEmpleado.sueldo){
-				System.out.println();
-				System.out.println("++++++ INICIO Analisis como compara compareTo(Object miObjeto) +++++++++ ");
-				System.out.println("this.sueldo ==>" + this.sueldo);
-				System.out.println("otroEmpleado.sueldo ==>" + otroEmpleado.sueldo);
-				System.out.println("VALOR = -1");
-				System.out.println("++++++ FIN Analisis como compara compareTo(Object miObjeto) +++++++++ ");
-				System.out.println();
-		  return -1;
-		  }
-		  
-		  if (this.sueldo > otroEmpleado.sueldo){
-				System.out.println();
-				System.out.println("++++++ INICIO Analisis como compara compareTo(Object miObjeto) +++++++++ ");
-				System.out.println("this.sueldo ==>" + this.sueldo);
-				System.out.println("otroEmpleado.sueldo ==>" + otroEmpleado.sueldo);
-				System.out.println("VALOR = 1");
-				System.out.println("++++++ FIN Analisis como compara compareTo(Object miObjeto) +++++++++ ");
-				System.out.println();
-		  return 1;
-		  }
+
+		if (this.sueldo < otroEmpleado.sueldo){
 			System.out.println();
 			System.out.println("++++++ INICIO Analisis como compara compareTo(Object miObjeto) +++++++++ ");
 			System.out.println("this.sueldo ==>" + this.sueldo);
 			System.out.println("otroEmpleado.sueldo ==>" + otroEmpleado.sueldo);
-			System.out.println("VALOR = 0");
+			System.out.println("VALOR = -1");
 			System.out.println("++++++ FIN Analisis como compara compareTo(Object miObjeto) +++++++++ ");
 			System.out.println();
-		  return 0;
-		  
+			return -1;
+		}
+
+		if (this.sueldo > otroEmpleado.sueldo){
+			System.out.println();
+			System.out.println("++++++ INICIO Analisis como compara compareTo(Object miObjeto) +++++++++ ");
+			System.out.println("this.sueldo ==>" + this.sueldo);
+			System.out.println("otroEmpleado.sueldo ==>" + otroEmpleado.sueldo);
+			System.out.println("VALOR = 1");
+			System.out.println("++++++ FIN Analisis como compara compareTo(Object miObjeto) +++++++++ ");
+			System.out.println();
+			return 1;
+		}
+		System.out.println();
+		System.out.println("++++++ INICIO Analisis como compara compareTo(Object miObjeto) +++++++++ ");
+		System.out.println("this.sueldo ==>" + this.sueldo);
+		System.out.println("otroEmpleado.sueldo ==>" + otroEmpleado.sueldo);
+		System.out.println("VALOR = 0");
+		System.out.println("++++++ FIN Analisis como compara compareTo(Object miObjeto) +++++++++ ");
+		System.out.println();
+		return 0;
+
 	}
 
 
