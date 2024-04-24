@@ -231,7 +231,7 @@ public class V39_Uso_empleado_SobreCargaDeConstructores {
 		 * 
 		 */
 
-		// System.out.printf(" Insetivo para los Jefes_V50 ==> %.2f%n%n ",
+		// System.out.printf(" Insetivo para los Itf_Jefes_V50 ==> %.2f%n%n ",
 		// jefe_RRHH.getIncentivo());
 		
 		

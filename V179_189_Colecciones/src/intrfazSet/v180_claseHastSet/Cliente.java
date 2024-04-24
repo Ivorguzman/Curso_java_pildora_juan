@@ -1,3 +1,4 @@
+package intrfazSet.v180_claseHastSet;
 import java.util.Objects;
 
 public class Cliente {
