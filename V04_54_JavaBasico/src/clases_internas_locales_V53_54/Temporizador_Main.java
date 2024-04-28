@@ -1,4 +1,4 @@
-package clases_internas_V53;
+package clases_internas_locales_V53_54;
 
 import javax.swing.JOptionPane;
 
@@ -7,8 +7,8 @@ public class Temporizador_Main {
 
 	public static void main(String[] args) {
 
-		Reloj mireloj = new Reloj(1000, true);
-		mireloj.enMarcha();
+		Reloj mireloj = new Reloj(); // Invocando constructor por defecto( sin Parametros)
+		mireloj.enMarcha(1000, true);
 
 		JOptionPane.showMessageDialog(null, "Pulsa aceptar para detenerlo");
 		System.exit(0);

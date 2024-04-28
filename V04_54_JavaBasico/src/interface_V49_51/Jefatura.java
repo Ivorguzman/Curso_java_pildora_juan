@@ -1,9 +1,9 @@
-package interface_V49_52;
+package interface_V49_51;
 
-import interface_V49_52.interfaces.Itf_Jefes_V50;
-import interface_V49_52.interfaces.Itf_Trabajadores_V51;
+import interface_V49_51.interfaces.Itf_Jefes_V50;
+import interface_V49_51.interfaces.Itf_Trabajadores_V51;
 
-class Jefatura extends Uso_Empleado implements Itf_Jefes_V50 {
+class Jefatura extends Empleado implements Itf_Jefes_V50 {
 
 
 
@@ -15,7 +15,7 @@ class Jefatura extends Uso_Empleado implements Itf_Jefes_V50 {
 	};
 
 
-	// Implementa Interfas : Itf_Jefes_V50
+	// Implementa metodo tomar_deciciones de la Interfas : Itf_Jefes_V50
 	@Override
 	public String tomar_deciciones(String decision) {
 		return "Decision Resolucion 1203 : " + decision;
@@ -26,7 +26,7 @@ class Jefatura extends Uso_Empleado implements Itf_Jefes_V50 {
 	// Implementa Interfas: Itf_Trabajadores_V51
 	@Override
 	public double estableceBonus(double gratificacion) {
-		double primaJefatura = 2;
+		double primaJefatura = gratificacion * 2;
 
 		return Itf_Trabajadores_V51.bonus_base + gratificacion + primaJefatura;
 	}

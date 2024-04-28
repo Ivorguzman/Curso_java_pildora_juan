@@ -1,9 +1,9 @@
-package interface_V49_52;
+package interface_V49_51;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-import interface_V49_52.interfaces.Itf_Trabajadores_V51;
+import interface_V49_51.interfaces.Itf_Trabajadores_V51;
 
 
 
@@ -15,7 +15,7 @@ import interface_V49_52.interfaces.Itf_Trabajadores_V51;
  *
  */
 
-class Uso_Empleado implements Comparable, Itf_Trabajadores_V51 {
+class Empleado implements Comparable, Itf_Trabajadores_V51 {
 
 
 	// Varaibles de Instancia
@@ -30,7 +30,7 @@ class Uso_Empleado implements Comparable, Itf_Trabajadores_V51 {
 
 	// CONSTRUCTOR firma :_Numero ,tipo, y orden de parametro (String nombre,
 	// double sueldo, int ahno,int mes, int,dia)
-	public Uso_Empleado(String nombre, double sueldo, int ahno, int mes, int dia) {
+	public Empleado(String nombre, double sueldo, int ahno, int mes, int dia) {
 		// System.out.println("29 this ==>" + this);
 		// System.out.println("------------------------------------------------------");
 
@@ -55,14 +55,14 @@ class Uso_Empleado implements Comparable, Itf_Trabajadores_V51 {
 	}
 
 	// ** SOBRE CARGA DEL CONSTRUCTOR ***
-	public Uso_Empleado(String nombre) {
+	public Empleado(String nombre) {
 
 		this(nombre, 30, 2000, 01, 01); // Invocando constructor de la misma clase (tercer uso del this() con[parentesis] ).
 
 	}
 
 	// ** SOBRE CARGA DEL CONSTRUCTOR **
-	public Uso_Empleado( ) { // Constructor << Sin Parametros >>
+	public Empleado( ) { // Constructor << Sin Parametros >>
 
 
 	}
@@ -121,8 +121,8 @@ class Uso_Empleado implements Comparable, Itf_Trabajadores_V51 {
 	// Implementando metodo de la Interfas Comparable: compareTo(Object miObjeto)
 	@Override
 	public int compareTo(Object miObjeto) {
-		// Casting de Objeto(convertir objeto de un tipo en otro): de Object a (Uso_Empleado)
-		Uso_Empleado otroEmpleado = (Uso_Empleado) miObjeto;
+		// Casting de Objeto(convertir objeto de un tipo en otro): de Object a (Empleado)
+		Empleado otroEmpleado = (Empleado) miObjeto;
 
 
 		/*
