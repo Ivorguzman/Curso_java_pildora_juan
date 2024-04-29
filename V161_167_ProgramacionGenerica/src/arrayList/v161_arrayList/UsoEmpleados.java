@@ -40,9 +40,13 @@ public class UsoEmpleados {
 		ArrayList<Empleado> listaEmpleados2 = new ArrayList<Empleado>();
 
 
-		// ** Metodo esnsureCapacity(x) define un ArrayList de x elementos
-		listaEmpleados2.ensureCapacity(15);
 
+		// ***************** inicio METODOS PARA OPTOIMIZAR MEMORIA **4*************************
+		// ** Metodo esnsureCapacity(x) define un ArrayList de x elementos
+		// Crea un ArrayList de 15 elementos
+		listaEmpleados2.ensureCapacity(14);
+
+		// Metodo .add() para agregar elementos al FINAL del arryList<...>
 		listaEmpleados2.add(new Empleado("A", 45, 2500));
 		listaEmpleados2.add(new Empleado("B", 55, 2000));
 		listaEmpleados2.add(new Empleado("C", 25, 2600));
@@ -60,8 +64,11 @@ public class UsoEmpleados {
 
 
 
+
+
 		// * El Metodo trimToSize() libera el espacio en memerio reservado de los cerrando el ArrayList<T> (Obtimización de recursos)
 		listaEmpleados2.trimToSize();
+		// ***************** fin METODOS PARA OPTOIMIZAR MEMORIA **4*************************
 
 
 

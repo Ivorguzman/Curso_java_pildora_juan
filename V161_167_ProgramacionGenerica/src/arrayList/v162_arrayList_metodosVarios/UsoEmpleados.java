@@ -10,11 +10,13 @@ public class UsoEmpleados {
 		ArrayList<Empleado> listaEmpleados = new ArrayList<Empleado>();
 
 
-		// ** Metodo esnsureCapacity(x) define un ArrayList<o> de x elementos
-		listaEmpleados.ensureCapacity(100);
+		// ***************** inicio METODOS PARA OPTOIMIZAR MEMORIA **4*************************
+		// ** Metodo esnsureCapacity(x) define un ArrayList de x elementos
+		// Crea un ArrayList de 4 elementos
+		listaEmpleados.ensureCapacity(14);
 
-		// Metodo .add(...) Agrega elementoa al ArrayList<o> en el mismo orden que se
-		// incluyen.
+
+		// Metodo .add() para agregar elementos al FINAL del arryList<...> en el mismo orden que se que se crea
 		listaEmpleados.add(new Empleado("A", 45, 2500));
 		listaEmpleados.add(new Empleado("B", 55, 2000));
 		listaEmpleados.add(new Empleado("C", 25, 2600));
@@ -33,77 +35,90 @@ public class UsoEmpleados {
 
 
 
-		// * El Metodo .trimToSize() libera el espacio en memerio reservado de los
-		// elemento no del AraayList no creadoss (Obtimización de recursos)
+		// * El Metodo trimToSize() libera el espacio en memerio reservado de los cerrando el ArrayList<T> (Obtimización de recursos)
 		listaEmpleados.trimToSize();
+		// ***************** fin METODOS PARA OPTOIMIZAR MEMORIA **4*************************
+
 
 
 		// ** Metodo .size() Indica cuantos elemento tiene un a ArrayList<>
+
 		System.out.println("El ArrayList tiene " + listaEmpleados.size() + " elementos");
 		System.out.println(" ");
 
+
 		// * Metod set y get de los ArrayList<o>
 
-		// * Metodo set(posicion,elemento),inserte un elemento en una posicion en
+		// * Metodo set(posicion,elemento),inserte o remplazar un elemento en una posicion en
 		// concreto, (sustituye al elemento si existe que este el la posicion indicada
 		// en la inserción)
-		listaEmpleados.set(3, new Empleado("**?**", 57, 3000));
+		/*
+		 * listaEmpleados.set(3, new Empleado("**?**", 57, 3000));// set(Posicion del elemento, Elemento a incluir)
+		 */
 
-
-		// * Metodo get(int)
-		System.out.println("** Impresion con  Metodo get(int)) ** ");
-		System.out.println("********************************************************************** ");
-		System.out.println("Metodo get(int) -> " + listaEmpleados.get(1).dameDatos());
-		System.out.println(" ");
-		System.out.println("Metodo get(int) -> " + listaEmpleados.get(13).dameDatos());
-		System.out.println("********************************************************************** ");
-		System.out.println(" ");
-		System.out.println(" ");
-
+		// * Metodo get(argumento de tipo int)) accediendo a un elemento en concreto del ArrayList<..>
+		/*
+		 * System.out.println("** Impresion con  Metodo get(int)) accediendo a un elemento en concreto del ArrayList<..> ** ");
+		 * System.out.println("********************************************************************** ");
+		 * System.out.println("Metodo get(0) -> " + listaEmpleados.get(0).dameDatos());
+		 * System.out.println(" ");
+		 * System.out.println("Metodo get(13) -> " + listaEmpleados.get(13).dameDatos());
+		 * System.out.println("********************************************************************** ");
+		 * System.out.println(" ");
+		 * System.out.println(" ");
+		 */
 		// *****************************************************
 
+
+
+
 		// Utilizando Bucle for Mejorado ( foreach())
-		System.out.println("** Impresion con el bucle for MEJORADO  (foreach(){..}) ** ");
-		System.out.println("********************************************************************** ");
-
-		for (Empleado empleado : listaEmpleados){
-			// System.out.println(listaEmpleados);
-			System.out.println(empleado.dameDatos());
-
-		}
+		/*
+		 * System.out.println("** Impresion con el bucle for MEJORADO  (foreach(){..}) ** ");
+		 * System.out.println("********************************************************************** ");
+		 * 
+		 * for (Empleado empleado : listaEmpleados){
+		 * // System.out.println(listaEmpleados);
+		 * System.out.println(empleado.dameDatos());
+		 * 
+		 * }
+		 */
 
 
 		// Utilizando Bucle empleado for clasico(for(...){..} )
-		System.out.println("********************************************************************** ");
-		System.out.println(" ");
-		System.out.println(" ");
-		System.out.println("** Impresion con el bucle for CLASICO (for(...){..} ) ** ");
-		System.out.println("********************************************************************** ");
 
-		for (int i = 0; i < listaEmpleados.size(); i++){
-			Empleado empleadoArray = listaEmpleados.get(i);
-			System.out.println(empleadoArray.dameDatos());
+		/*
+		 * System.out.println("********************************************************************** ");
+		 * System.out.println(" ");
+		 * System.out.println(" ");
+		 * System.out.println("** Impresion con el bucle for CLASICO (for(...){..} ) ** ");
+		 * System.out.println("********************************************************************** ");
+		 * 
+		 * for (int i = 0; i < listaEmpleados.size(); i++){
+		 * Empleado empl = listaEmpleados.get(i);
+		 * System.out.println(empl.dameDatos());
+		 * }
+		 */
 
-
-		}
-		System.out.println("********************************************************************** ");
-		System.out.println(" ");
-		System.out.println(" ");
-		System.out.println("** Copiando ArrayList a Array convencional con metod get de ArrayList<0> ** ");
-		System.out.println("** Impresion  Array convencional con el bucle for clasico(for(...){..} ) ** ");
-		System.out.println("********************************************************************** ");
-
-
+		/*
+		 * System.out.println("********************************************************************** ");
+		 * System.out.println(" ");
+		 * System.out.println(" ");
+		 * System.out.println("** Impresion  Array convencional con el bucle for clasico(for(...){..} ) ** ");
+		 */
+		// Creación de array convencional de typo clase empleado
+		// Indicando numero de elemntos del array en corma dinamica -Empleado[listaEmpleados.size()]-
 		Empleado arrayEmpleados[] = new Empleado[listaEmpleados.size()];
-
 
 		for (int i = 0; i < arrayEmpleados.length; i++){
 
 			arrayEmpleados[i] = listaEmpleados.get(i);
 
-			System.out.println(arrayEmpleados[i].dameDatos());
-
+			/*
+			 * System.out.println(arrayEmpleados[i].dameDatos());
+			 */
 		}
+
 
 
 		System.out.println("********************************************************************** ");
@@ -112,11 +127,13 @@ public class UsoEmpleados {
 		System.out.println("** Copiando ArrayList a Array convencional con el metodo toArray() ** ");
 		System.out.println("** Impresion  Array convencional con el bucle for clasico(for(...){..} ) ** ");
 		System.out.println("********************************************************************** ");
+
+
 		Empleado arrayEmpleados2[] = new Empleado[listaEmpleados.size()];
-		
-		// * Metodo .toArray()
+		// * Metodo .toArray() copia todo lo que este en arrayEmpleados2 a listaEmpleados
 		listaEmpleados.toArray(arrayEmpleados2);
 
+		// Recoriendo los elementos copiados a listaEmpleados
 		for (int i = 0; i < arrayEmpleados.length; i++){
 
 			System.out.println(arrayEmpleados2[i].dameDatos());
