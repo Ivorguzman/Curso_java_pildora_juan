@@ -15,7 +15,7 @@ abstract class Persona {
 	// CONSTRUCTOR firma (String nombre)
 	public Persona(String nombre) {
 		if (nombre == null) {
-			throw new IllegalArgumentException("ERROR: Pearmetro Tranferido erroneo ");
+			throw new IllegalArgumentException("ERROR: Pearmetro Tranferido erroneo");
 		}
 		this.nombre = nombre;
 	}
@@ -38,9 +38,12 @@ abstract class Persona {
 	 *          implementación que le indique.
 	 */
 
+
+	// ****** INICIO METODO ABSTRACTO() ****
+
 	public abstract String descripcion();
 
-	// ****** FIN METODOS ABSTRACTA() ****
+	// ****** FIN METODO ABSTRACTO() ****
 
 }
 // ****** FIN CLASE PERSONA ABSTRACTA(){...} ****

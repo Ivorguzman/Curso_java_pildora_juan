@@ -24,8 +24,8 @@ class Empleado implements Comparable, Itf_Trabajadores_V51 {
 	private Date altaContrato;// referenciado (Tipo Objeto)
 	private int id;
 
-	// Varaibles de Clase (static)
-	private static int contador = 0;// por ... se inicia en cero
+	// Varaibles de Clase o campo (static)
+	private static int contador = 0;// por ser una variable de control se inicia en cero
 
 
 	// CONSTRUCTOR firma :_Numero ,tipo, y orden de parametro (String nombre,
@@ -122,6 +122,8 @@ class Empleado implements Comparable, Itf_Trabajadores_V51 {
 	@Override
 	public int compareTo(Object miObjeto) {
 		// Casting de Objeto(convertir objeto de un tipo en otro): de Object a (Empleado)
+		// compare to retorna dato de tipo entero
+		// y se hace un casting de entero a Empleado
 		Empleado otroEmpleado = (Empleado) miObjeto;
 
 

@@ -29,6 +29,7 @@ public class Clase1_ModificadoresDeAcceso {
 	}
 
 	// con modificador Explicito private
+	@SuppressWarnings("unused")
 	private String miMetodo_private() {
 		return " El valor de mivar_private es: " + this.mivar_private;
 	}

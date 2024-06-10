@@ -76,7 +76,7 @@ public class Uso_Empleado_Main {
 
 		// *** POLIMORFISMO (Principio de sustitucion Jefatura [es un] Empleados V43) ****
 		Empleado director_comercial = new Jefatura("Sandra", 30, 2012, 05, 05);
-		Comparable ejemplo = new Empleado("Elisabeth", 32, 2011, 06, 07);
+		Comparable<?> ejemplo = new Empleado("Elisabeth", 32, 2011, 06, 07);
 
 
 		System.out.println("******************************************************");

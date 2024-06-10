@@ -39,7 +39,7 @@ class Jefatura extends Empleado implements Itf_Jefes_V50 {
 	@Override
 	public double getSueldo() { // realazandolo sobre escribiendo el metodo getSueldo()
 
-		double sueldoJefe = super.getSueldo(); // Invocando el metodo getSueldo de la clase Padre
+		double sueldoJefe = super.getSueldo(); // Invocando el metodo getSueldo(heredado) de la clase Padre
 		return sueldoJefe + this.incentivo;
 	}
 
@@ -56,7 +56,7 @@ class Jefatura extends Empleado implements Itf_Jefes_V50 {
 
 	public void setIncentivo(double incentivo) {
 		if (incentivo <= 0){
-			throw new IllegalArgumentException("Monto tiene que ser  positivo < Mayor a 0 >");
+			throw new IllegalArgumentException("Monto tiene que ser  positivo (Mayor > 0 ");
 		}
 		this.incentivo = incentivo;
 	}

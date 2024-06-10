@@ -11,6 +11,7 @@ public class V48_enumerados {
 		EXTRA_PEQUEÑA, PEQUEÑA, MEDIANA, LARGA, EXTRA_LARGA, EXTRA_EXTRA_LARGA
 	};
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		// Variables Objetos
 		Talla ss = Talla.EXTRA_PEQUEÑA;
