@@ -15,9 +15,6 @@ public class Uso_Empleado_Main {
 
 		// Creación de los Arrays tipo empleado y jefatura
 		Empleado[] misEmpleados = new Empleado[7];
-		Jefatura[] misJefes = new Jefatura[2];
-
-
 		misEmpleados[0] = new Empleado("Ivor Guzmán", 80, 1990, 12, 17); // almasenado objetos de super-clase <
 		misEmpleados[1] = new Empleado("Ana López", 70, 1995, 06, 02);
 		misEmpleados[2] = new Empleado("Maria Martín", 60, 2002, 03, 15);

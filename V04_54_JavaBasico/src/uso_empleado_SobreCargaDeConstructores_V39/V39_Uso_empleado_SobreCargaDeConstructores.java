@@ -166,11 +166,6 @@ public class V39_Uso_empleado_SobreCargaDeConstructores {
 	public static void main(String[] args) {
 
 		EmpleadoArry[] misEmpleados = new EmpleadoArry[7];
-		Jefatura[] misJefes = new Jefatura[2];
-
-		
-
-
 		misEmpleados[0] = new EmpleadoArry("Ivor Guzmán", 85000, 1990, 12, 17); // almasenado objetos de super-clase <
 		misEmpleados[1] = new EmpleadoArry("Ana López", 95000, 1995, 06, 02);
 		misEmpleados[2] = new EmpleadoArry("Maria Martín", 105000, 2002, 03, 15);
