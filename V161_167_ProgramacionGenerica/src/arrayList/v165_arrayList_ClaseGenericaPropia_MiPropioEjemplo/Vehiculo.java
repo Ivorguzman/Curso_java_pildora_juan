@@ -1,4 +1,4 @@
-package arrayList.v165_arrayList_ClaseGenericaPropia;
+package arrayList.v165_arrayList_ClaseGenericaPropia_MiPropioEjemplo;
 
 // Definición de clase Generica (<T>)
 public class Vehiculo<T> {

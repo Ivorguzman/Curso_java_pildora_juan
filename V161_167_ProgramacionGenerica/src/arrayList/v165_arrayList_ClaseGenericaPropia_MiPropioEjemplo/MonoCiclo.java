@@ -1,4 +1,4 @@
-package arrayList.v165_arrayList_ClaseGenericaPropia;
+package arrayList.v165_arrayList_ClaseGenericaPropia_MiPropioEjemplo;
 
 class MonoCiclo {
 	private String habilida;
