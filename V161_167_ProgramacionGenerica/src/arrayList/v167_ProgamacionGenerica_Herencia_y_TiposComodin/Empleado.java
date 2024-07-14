@@ -9,19 +9,38 @@ class Empleado {
 
 	// Varaibles de Instancia
 	private int id;// primitivo
+	private int edad;// primitivo
 	private String nombre;// referenciado (Tipo Objeto)
 	private String cargo;// referenciado (Tipo Objeto)
-	private Double sueldo;// referenciado (Tipo Objeto)
+	private double sueldo;// referenciado (Tipo Objeto)
 	private Date altaContrato;// referenciado (Tipo Objeto)
 
 	// Varaibles de Clase (static)
 	private static int contador = 0;// por ... se inicia en cero
 
 
-
-
-
 	// ** CONSTRUCTOR ***
+	public Empleado(String nombre, String cargo, double sueldo, int ahno, int mes, int dia) {
+		++contador;
+
+		// System.out.println("Volores por defecto del this ==>" + this);
+		// System.out.println("------------------------------------------------------");
+
+
+		GregorianCalendar calendario = new GregorianCalendar(ahno, mes - 1, dia); // sobre carga del constructor
+		this.id = contador;
+		this.nombre = nombre;
+		this.sueldo = sueldo;
+		this.cargo=cargo;
+		this.altaContrato = calendario.getTime();
+
+		// System.out.println("Volores instanciados del this ==>" + this);
+		System.out.println("");
+	}
+
+
+
+	// ** SOBRE CARGA 1 DEL CONSTRUCTOR ***
 	public Empleado(String nombre, double sueldo, int ahno, int mes, int dia) {
 		++contador;
 
@@ -41,7 +60,7 @@ class Empleado {
 
 
 
-	// ** SOBRE CARGA DEL CONSTRUCTOR ***
+	// ** SOBRE CARGA 2 DEL CONSTRUCTOR ***
 	public Empleado( ) { // Constructor por defecto << Sin Parametros >>
 
 
@@ -49,7 +68,19 @@ class Empleado {
 
 
 
-	// ** SOBRE CARGA DEL CONSTRUCTOR ***
+
+	// ** SOBRE CARGA 3 DEL CONSTRUCTOR ***
+	public Empleado(String nombre) {
+
+
+		// Invocando constructor de la misma clase (tercer uso del this).
+		this(nombre, "Desarrollador  Semi-Senior", 360000, 2025, 01, 01);
+
+	}
+
+
+
+	// ** SOBRE CARGA 4 DEL CONSTRUCTOR ***
 	public Empleado( String nombre, String cargo) {
 		System.out.println("Volores por defecto del this ==>" + this);
 		this.nombre = nombre;
@@ -59,14 +90,15 @@ class Empleado {
 	}
 
 
-	// ** SOBRE CARGA DEL CONSTRUCTOR ***
-	public Empleado(String nombre) {
-
-		this(nombre, 30000, 2000, 01, 01); // Invocando constructor de la misma (clase tercer uso del this).
+	// ** SOBRE CARGA 5 DEL CONSTRUCTOR ***
+	public Empleado(String nombre, int edad, double sueldo) {
+		// System.out.println("Volores por defecto del this ==>" + this);
+		this.nombre = nombre;
+		this.edad = edad;
+		this.sueldo = sueldo;
+		// System.out.println("Volores instanciados del this ==>" + this);
 
 	}
-
-
 
 	// ************************** GETTER Y SETTERS ***************************************
 
@@ -126,11 +158,18 @@ class Empleado {
 	}
 	// Fin de GETTERS Y SETTERS
 
-	/* , la implementación predeterminada del método toString() en la clase base Object no incluye detalles específicos de los atributos de tu clase personalizada. */
+
+
+
+	/*
+	 * , la implementación predeterminada del método toString()
+	 * en la clase base Object no incluye detalles específicos
+	 * de los atributos de clases personalizada.
+	 */
 
 	@Override
 	public String toString() {
-		return "Empleado [nombre=" + this.nombre + ", sueldo=" + this.sueldo + ", altaContrato=" + this.altaContrato + ", id=" + this.id + ", cargo=" + this.cargo + "]";
+		return "Empleado [nombre=" + this.nombre + ", cargo=" + this.cargo + ", sueldo=" + this.sueldo + ", altaContrato=" + this.altaContrato + "]";
 	}
 
 }

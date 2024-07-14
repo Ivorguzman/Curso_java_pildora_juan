@@ -4,14 +4,23 @@ package arrayList.v167_ProgamacionGenerica_Herencia_y_TiposComodin;
 // Clase Jefatura
 class Jefatura extends Empleado {
 
+	private double incentivo;
+
 	// CONSTRUCTOR DE LA CLASE
 	public Jefatura(String nombre, double sueldo, int ahno, int mes, int dia) {
 
+		// LLamada al contructor de la clase de la que hereda osea constructor de la clase padre (Empleado)
+		// le pasa los argumentos (nombre, sueldo, ahno, mes, dia);
 		super(nombre, sueldo, ahno, mes, dia);
 
 	};
 
-	private double incentivo;
+	// ** SOBRE CARGA 1 DEL CONSTRUCTOR ***
+	public Jefatura(String nombre, int edad, double sueldo) {
+		super(nombre, edad, sueldo);
+
+
+	};
 
 	// GETTERS Y SETTERS
 	@Override
@@ -34,6 +43,7 @@ class Jefatura extends Empleado {
 	public double getIncentivo() {
 		return this.incentivo;
 	}
+
 
 
 

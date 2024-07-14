@@ -4,31 +4,95 @@ package arrayList.v167_ProgamacionGenerica_Herencia_y_TiposComodin;
 public class Pareja<T> {
 
 	// Definir campo de calse Generico y encapsulado
-	private T primero;
+	private T primeroEmpleado;
+	private T primeroJefatura;
 
 	// Contructor Sin parametros
 	public Pareja( ) {
 
-		this.primero = null;
+		this.primeroEmpleado = null;
+		this.primeroJefatura = null;
 
 	}
 
 	// Metodo setters Generico Cambia el estado del compo primero de null a lo que indique el paranetro de Metodo
-	public void setPrimero(T NuevoValor) {
-		this.primero = NuevoValor;
+
+	public T getPrimeroEmpleado() {
+		return this.primeroEmpleado;
+	}
+
+	public void setPrimeroEmpleado(T primeroEmpleado) {
+		this.primeroEmpleado = primeroEmpleado;
+	}
+
+	public T getPrimeroJefatura() {
+		return this.primeroJefatura;
+	}
+
+	public void setPrimeroJefatura(T primeroJefatura) {
+		this.primeroJefatura = primeroJefatura;
+	}
+
+	// Metodo static sin parametro comodin
+	public static void imprimirTrabajador(Pareja<Empleado> parametroEmpleado, Pareja<Jefatura> parametroJefatura) {
+
+		Empleado primeroEmpleado = parametroEmpleado.getPrimeroEmpleado();
+		Jefatura primeroJefatura = parametroJefatura.getPrimeroJefatura();
+
+
+		System.out.println(primeroEmpleado);
+		System.out.println(primeroJefatura);
 	}
 
 
-	// Metodo Getters Generico retorna el estado del compo primero
-	public T getPrimero() {
-		return this.primero;
+	// Metodo static con parametro comodin (? extends XXXX )
+	@SuppressWarnings("null")
+	public static void imprimirTrabajadorComodin(Pareja<? extends Empleado> parametroEmpleado) {
+		
+		if (parametroEmpleado != null) {
+			
+			Empleado primeroEmpleado = parametroEmpleado.getPrimeroEmpleado();
+			System.out.println(parametroEmpleado.toString1());
+		} else{
+
+
+			Empleado primeroEmpleado = parametroEmpleado.getPrimeroEmpleado();
+			System.out.println(parametroEmpleado.toString2());
+		}
+
+		
+
 
 	}
 
 
+	public String toString1() {
+		return "Pareja ==>  " + this.primeroEmpleado;
+	}
+
+	public String toString2() {
+		return "Pareja ==>  " + this.primeroJefatura;
+	}
 
 
 
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

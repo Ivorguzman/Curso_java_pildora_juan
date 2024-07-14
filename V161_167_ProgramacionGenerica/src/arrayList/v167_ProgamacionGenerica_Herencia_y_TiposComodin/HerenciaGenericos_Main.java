@@ -10,16 +10,93 @@ public class HerenciaGenericos_Main {
 
 	public static void main(String[] args) {
 		
-		// ****************** POLIMORFISMO GENERICO) *********************
-		Empleado desarrolladorJr = new Empleado("Ívor Guzmán", "Desarrollador Jn_LoMaximo");
-		Jefatura jefeSistemas = new Jefatura("Ívor Guzmán", 10000, 2027, 06, 25);
+		// ****************** POLIMORFISMO CON CLASES ORDINARIAS) *********************
 
+		Empleado desarrolladorJr = new Empleado("Ívor Guzmán");
+		Jefatura jefeSistemas = new Jefatura("Ívor Guzmán", 88000, 2028, 04, 01);
+
+		System.out.println("****************** POLIMORFISMO ( Jefatura extends Empleado) *********************");
+
+		// PRINCIPIO DE SUSTITUCIÓN (ES UN) ==> jefeSistemas ES UN Empleado
+		Empleado desarrolladorSr = jefeSistemas;
+		System.out.println(desarrolladorSr.getNombre());
+		System.out.println("****************** FIN POLIMORFISMO ( < ES UN > Jefatura extends Empleado) *********************");
+
+		System.out.println();
+		System.out.println();
+
+
+		// Creando clase con tipo generico ; soporta diversos tipos de datos (Pareja<Empleado> - Pareja<Jefatura>)
 		Pareja<Empleado> desarrollador = new Pareja<>();
 		Pareja<Jefatura> sistemas = new Pareja<>();
 
+
+
+
+		System.out.println("******* Empleado *********");
 		System.out.println(desarrolladorJr.getNombre());
 		System.out.println(desarrolladorJr.getCargo());
-		
+
+
+
+		desarrollador.setPrimeroEmpleado(desarrolladorSr);
+		;
+		System.out.println(desarrollador.getPrimeroEmpleado());
+
+		System.out.println();
+		System.out.println();
+
+
+
+
+
+		System.out.println("******* Jefatura *********");
+
+		jefeSistemas.setNombre("Ívor Alexander");
+		System.out.println(jefeSistemas.getNombre());
+
+		jefeSistemas.setCargo("Jefe de desarrollo de APIs");
+		System.out.println(jefeSistemas.getCargo());
+
+		jefeSistemas.setNombre("Ívor Alexander Guzmán Zambrano");
+		System.out.println(jefeSistemas);
+
+		System.out.println();
+		System.out.println();
+
+
+
+
+
+
+		// ****************** POLIMORFISMO CON CLASES GENERICO con tipos comodin (? extends XXXX ) *********************
+
+
+		Pareja<Empleado> AdmSistemas = new Pareja<>();
+		Pareja<Jefatura> DirectoSistemas = new Pareja<>();
+
+		AdmSistemas.setPrimeroEmpleado(desarrolladorJr);
+
+		DirectoSistemas.setPrimeroJefatura(jefeSistemas);
+
+		System.out.println(desarrolladorJr);
+		System.out.println(jefeSistemas);
+		System.out.println(AdmSistemas.toString1());
+		System.out.println(DirectoSistemas.toString2());
+
+		System.out.println("****************** POLIMORFISMO GENERICO ( < ES UN > Jefatura extends Empleado) *********************");
+
+		// Sin parametro comodin (? extends XXXX ) en el metodo static
+		// Pareja.imprimirTrabajador(AdmSistemas.setPrimeroEmpleado(desarrolladorSr), DirectoSistemas.setPrimeroJefatura(jefeSistemas));
+
+
+		// Con parametro comodin (? extends XXXX ) en el metodo static
+		// Pareja.imprimirTrabajadorComodin(AdmSistemas);
+		Pareja.imprimirTrabajadorComodin(DirectoSistemas);
+
+		System.out.println("****************** FIN POLIMORFISMO GENERICO ( < ES UN > Jefatura extends Empleado) *********************");
+
+
 
 
 	}
