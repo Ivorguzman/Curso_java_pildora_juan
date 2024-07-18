@@ -167,6 +167,8 @@ class Empleado {
 	 * de los atributos de clases personalizada.
 	 */
 
+
+	// Metodos toString() Intrinsico por eclipse
 	@Override
 	public String toString() {
 		return "Empleado [nombre=" + this.nombre + ", cargo=" + this.cargo + ", sueldo=" + this.sueldo + ", altaContrato=" + this.altaContrato + "]";

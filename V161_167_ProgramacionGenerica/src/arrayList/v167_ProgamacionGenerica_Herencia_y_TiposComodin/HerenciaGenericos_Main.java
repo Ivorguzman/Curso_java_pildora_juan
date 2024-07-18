@@ -12,18 +12,20 @@ public class HerenciaGenericos_Main {
 		
 		// ****************** POLIMORFISMO CON CLASES ORDINARIAS) *********************
 
-		Empleado desarrolladorJr = new Empleado("Ívor Guzmán");
+		Empleado desarrolladorJr = new Empleado("Alexander Zambrano");
 		Jefatura jefeSistemas = new Jefatura("Ívor Guzmán", 88000, 2028, 04, 01);
 
-		System.out.println("****************** POLIMORFISMO ( Jefatura extends Empleado) *********************");
+		// System.out.println("****************** POLIMORFISMO ( Jefatura extends Empleado) *********************");
 
 		// PRINCIPIO DE SUSTITUCIÓN (ES UN) ==> jefeSistemas ES UN Empleado
 		Empleado desarrolladorSr = jefeSistemas;
-		System.out.println(desarrolladorSr.getNombre());
-		System.out.println("****************** FIN POLIMORFISMO ( < ES UN > Jefatura extends Empleado) *********************");
-
-		System.out.println();
-		System.out.println();
+		/*
+		 * System.out.println(desarrolladorSr.getNombre());
+		 * System.out.println("****************** FIN POLIMORFISMO ( < ES UN > Jefatura extends Empleado) *********************");
+		 * 
+		 * System.out.println();
+		 * System.out.println();
+		 */
 
 
 		// Creando clase con tipo generico ; soporta diversos tipos de datos (Pareja<Empleado> - Pareja<Jefatura>)
@@ -32,37 +34,42 @@ public class HerenciaGenericos_Main {
 
 
 
-
-		System.out.println("******* Empleado *********");
-		System.out.println(desarrolladorJr.getNombre());
-		System.out.println(desarrolladorJr.getCargo());
+		/*
+		 * System.out.println("******* Empleado *********");
+		 * System.out.println(desarrolladorJr.getNombre());
+		 * System.out.println(desarrolladorJr.getCargo());
+		 */
 
 
 
 		desarrollador.setPrimeroEmpleado(desarrolladorSr);
 		;
-		System.out.println(desarrollador.getPrimeroEmpleado());
+		/*
+		 * System.out.println(desarrollador.getPrimeroEmpleado());
+		 * 
+		 * System.out.println();
+		 * System.out.println();
+		 */
 
-		System.out.println();
-		System.out.println();
 
 
 
 
+		// System.out.println("******* Jefatura *********");
 
-		System.out.println("******* Jefatura *********");
-
-		jefeSistemas.setNombre("Ívor Alexander");
-		System.out.println(jefeSistemas.getNombre());
+		jefeSistemas.setNombre("Alexander Zambrano");
+		// System.out.println(jefeSistemas.getNombre());
 
 		jefeSistemas.setCargo("Jefe de desarrollo de APIs");
-		System.out.println(jefeSistemas.getCargo());
+		// System.out.println(jefeSistemas.getCargo());
 
-		jefeSistemas.setNombre("Ívor Alexander Guzmán Zambrano");
-		System.out.println(jefeSistemas);
+		jefeSistemas.setNombre("Ívor  Guzmán");
+		// System.out.println(jefeSistemas);
 
-		System.out.println();
-		System.out.println();
+		/*
+		 * System.out.println();
+		 * System.out.println();
+		 */
 
 
 
@@ -71,12 +78,17 @@ public class HerenciaGenericos_Main {
 
 		// ****************** POLIMORFISMO CON CLASES GENERICO con tipos comodin (? extends XXXX ) *********************
 
+		System.out.println("******************  POLIMORFISMO CON CLASES GENERICO con tipos comodin (? extends XXXX ) *********************");
+		System.out.println();
 
-		Pareja<Empleado> AdmSistemas = new Pareja<>();
-		Pareja<Jefatura> DirectoSistemas = new Pareja<>();
+		// Clase Tipo Empleado
+		Pareja<Empleado> AdmSistemas = new Pareja<>();// Constructor sin argumento
+
+		// Clase tipo jefatura
+		Pareja<Jefatura> DirectoSistemas = new Pareja<>();// Constructor sin argumento
+
 
 		AdmSistemas.setPrimeroEmpleado(desarrolladorJr);
-
 		DirectoSistemas.setPrimeroJefatura(jefeSistemas);
 
 		System.out.println(desarrolladorJr);

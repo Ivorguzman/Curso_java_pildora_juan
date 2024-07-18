@@ -1,0 +1,32 @@
+
+
+¿Qué es una interfaz en Java?En Java, una interfaz es como un contrato que dice qué métodos debe tener una clase, pero no dice cómo deben funcionar esos métodos. Es como un plano de una casa que muestra dónde deben estar las puertas y ventanas, pero no dice de qué material deben estar hechas.
+
+En Java, Set es una interfaz y no se puede instanciar directamente. Una interfaz define un conjunto de métodos que una clase debe implementar, pero no proporciona una implementación concreta de esos métodos. Por eso, no puedes hacer new Set<Cliente>().
+
+En su lugar, usamos una clase que implementa la interfaz Set, como HashSet. HashSet proporciona una implementación concreta de los métodos definidos en la interfaz Set.
+
+En Java, una interfaz es como un contrato que dice qué métodos debe tener una clase, pero no dice cómo deben funcionar esos métodos. Es como un plano de una casa que muestra dónde deben estar las puertas y ventanas, pero no dice de qué material deben estar hechas.
+
+¿Por qué no se puede usar new Set<Cliente>()?
+La interfaz Set es solo un plano, no una casa completa. No puedes crear una instancia de Set directamente porque no tiene una implementación concreta de los métodos. Es como intentar construir una casa solo con el plano, sin materiales ni herramientas.
+
+¿Cómo se usa entonces?
+En lugar de usar new Set<Cliente>(), usamos una clase que implementa la interfaz Set, como HashSet. HashSet es una clase concreta que proporciona una implementación de los métodos definidos en la interfaz Set. Es como tener una casa ya construida basada en el plano.
+
+ Vamos a explicar este concepto de una manera muy sencilla.
+
+
+Ejemplo:
+
+Set<Cliente> clientesBanco = new HashSet<Cliente>();
+
+Aquí estamos diciendo:
+- Set<Cliente>: Queremos una colección de objetos Cliente que no permita duplicados.
+- clientesBanco: Este es el nombre de nuestra colección.
+- new HashSet<Cliente>(): Estamos creando una nueva instancia de HashSet, que es una implementación concreta de la interfaz Set.
+
+
+Resumen:
+- Interfaz (Set): Define qué métodos debe tener una clase, pero no cómo deben funcionar.
+- Clase concreta (HashSet): Proporciona una implementación concreta de los métodos definidos en la interfaz.

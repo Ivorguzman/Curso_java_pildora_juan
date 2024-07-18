@@ -4,23 +4,8 @@ import java.util.Set;
 
 public class MainCuentasUsuarios {
 	public static void main(String[] args) {
-		
-		/* Forma 1 de crear un Objeto y instanciarlo */
-		/*
-		 * Cliente cl1;
-		 * Cliente cl2;
-		 * Cliente cl3;
-		 * Cliente cl4;
-		 * 
-		 * cl1 = new Cliente("Antonio Banderas", "0 0001", 200000);
-		 * cl2 = new Cliente("Rafael Nadal", "00002", 250000);
-		 * cl3 = new Cliente("Penelope Cruz", "00003", 300000);
-		 * cl4 = new Cliente("Julio Iglesias", "00004", 5000000);
-		 */
 
-
-
-		/* Forma 1 de crear un Objeto y instanciarlo ( Forma Habiual de hacerlo por convención) */
+		// instancias de la clase Clientes
 		Cliente cl1 = new Cliente("Antonio Banderas", "00001", 200000);
 		Cliente cl2 = new Cliente("Rafael Nadal", "00002", 250000);
 		Cliente cl3 = new Cliente("Penelope Cruz", "00003", 300000);
@@ -28,13 +13,24 @@ public class MainCuentasUsuarios {
 
 
 
-		// Elejir clase que se adecuada a mis nececidades (HashSet) y implemente una interfas (Set)[Para elementos no repetidos y sin Ordenar[
-
-		// 1. Escoger la Coleccion Adecuada
 
 
-		// 2. Crear la coleccion de Tipo Ha ( con la clase HashSet)
-		Set<Cliente> clientesBanco = new HashSet<Cliente>();
+		/*
+		 * Aquí estamos diciendo:
+		 * 1. Set<Cliente>: Queremos una colección de objetos Cliente que no permita duplicados.
+		 * 2. clientesBanco: Este es el nombre de nuestra colección ( Tipo HashSet).
+		 * 3. new HashSet<Cliente>(): Estamos creando una nueva instancia de HashSet,
+		 * que es una implementación concreta de la interfaz Set.
+		 * 
+		 * Resumen:
+		 * Interfaz (Set): Define qué métodos debe tener una clase, pero no cómo deben funcionar.
+		 * Clase concreta (HashSet): Proporciona una implementación concreta de los métodos definidos en la interfaz.
+		 */
+
+		// -Set- es una interfaz que no permite elementos duplicados.
+		// -HashSet- es una clase que implementa la interfaz -Set-
+		// -HashSet- No permite ordenamientos
+		Set<Cliente> clientesBanco = new HashSet<>();
 
 
 
@@ -45,8 +41,8 @@ public class MainCuentasUsuarios {
 		clientesBanco.add(cl4);
 
 
-
 		// 4. Recorrer la colección con (for Mejorado[for ech]
+		// fore+Ctrl+spacio=crear forech
 		for (Cliente cliente : clientesBanco){
 
 			System.out.println("hashCode:" + cliente.hashCode());

@@ -17,57 +17,36 @@ public class Cliente {
 
 
 
-	/**
-	 * @return el nombre
-	 */
 	public String getNombre() {
 		return this.nombre;
 	}
 
 
 
-	/**
-	 * @param nombre
-	 *               el nombre a establecer
-	 */
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-
-
-	/**
-	 * @return el n_cuenta
-	 */
 	public String getN_cuenta() {
 		return this.n_cuenta;
 	}
 
 
 
-	/**
-	 * @param n_cuenta
-	 *                 el n_cuenta a establecer
-	 */
-	public void setN_cuenta(String n_cuenta) {
-		this.n_cuenta = n_cuenta;
-	}
-
-
-
-	/**
-	 * @return el saldo
-	 */
 	public double getSaldo() {
 		return this.saldo;
 	}
 
 
 
-	/**
-	 * @param saldo
-	 *              el saldo a establecer
-	 */
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+
+	public void setN_cuenta(String n_cuenta) {
+		this.n_cuenta = n_cuenta;
+	}
+
+
+
 	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}

@@ -16,22 +16,22 @@ public class Pareja<T> {
 	}
 
 	// Metodo setters Generico Cambia el estado del compo primero de null a lo que indique el paranetro de Metodo
-
 	public T getPrimeroEmpleado() {
 		return this.primeroEmpleado;
-	}
-
-	public void setPrimeroEmpleado(T primeroEmpleado) {
-		this.primeroEmpleado = primeroEmpleado;
 	}
 
 	public T getPrimeroJefatura() {
 		return this.primeroJefatura;
 	}
 
+	public void setPrimeroEmpleado(T primeroEmpleado) {
+		this.primeroEmpleado = primeroEmpleado;
+	}
+
 	public void setPrimeroJefatura(T primeroJefatura) {
 		this.primeroJefatura = primeroJefatura;
 	}
+
 
 	// Metodo static sin parametro comodin
 	public static void imprimirTrabajador(Pareja<Empleado> parametroEmpleado, Pareja<Jefatura> parametroJefatura) {
@@ -45,6 +45,8 @@ public class Pareja<T> {
 	}
 
 
+
+
 	// Metodo static con parametro comodin (? extends XXXX )
 	@SuppressWarnings("null")
 	public static void imprimirTrabajadorComodin(Pareja<? extends Empleado> parametroEmpleado) {
@@ -53,6 +55,7 @@ public class Pareja<T> {
 			
 			Empleado primeroEmpleado = parametroEmpleado.getPrimeroEmpleado();
 			System.out.println(parametroEmpleado.toString1());
+
 		} else{
 
 
@@ -66,7 +69,10 @@ public class Pareja<T> {
 	}
 
 
+	// Metodos toString() Personalizados
 	public String toString1() {
+
+
 		return "Pareja ==>  " + this.primeroEmpleado;
 	}
 
