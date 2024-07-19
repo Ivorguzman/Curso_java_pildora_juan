@@ -1,6 +1,6 @@
 # Curso de Java - Píldoras Informáticas
 
-Este repositorio contiene el material y los ejercicios del curso de Java impartido por Píldoras Informáticas, desde lo básico hasta lo avanzado.
+Este repositorio contienemis practica y clases desarrolladas del curso de Java impartido por Píldoras Informáticas, desde lo básico hasta lo avanzado.
 
 ## Contenido del Curso
 
