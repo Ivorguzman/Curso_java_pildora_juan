@@ -10,6 +10,8 @@ public class MainCuentasUsuarios {
 		Cliente cl2 = new Cliente("Rafael Nadal", "00002", 250000);
 		Cliente cl3 = new Cliente("Penelope Cruz", "00003", 300000);
 		Cliente cl4 = new Cliente("Julio Iglesias", "00004", 5000000);
+		Cliente cl5 = new Cliente("Julio Iglesias", "00004", 5000000);
+		Cliente cl6 = new Cliente("Rafael Nadal", "00002", 250000);
 
 
 
@@ -34,11 +36,13 @@ public class MainCuentasUsuarios {
 
 
 
-		// 3. Agregar clientes con su metodo add de HasSet<???>()
+		// 3. Agregar clientes con su metodo add de HasSet<???>() que gestiona los duplicados en la coleccion
 		clientesBanco.add(cl1);
 		clientesBanco.add(cl2);
 		clientesBanco.add(cl3);
 		clientesBanco.add(cl4);
+		clientesBanco.add(cl5);
+		clientesBanco.add(cl6);
 
 
 		// 4. Recorrer la colección con (for Mejorado[for ech]

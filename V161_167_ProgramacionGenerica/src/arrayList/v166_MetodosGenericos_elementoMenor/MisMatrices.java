@@ -10,7 +10,7 @@ class MisMatrices {
 
 }
 	
-
+// Se especifica un límite superior <T extends Comparable<T>>
 public static <T extends Comparable<T>> T getElementoMenor(T[] elemento) {
 
 	if (elemento == null || elemento.length == 0){

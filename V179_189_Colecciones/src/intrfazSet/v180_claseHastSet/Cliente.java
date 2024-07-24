@@ -1,4 +1,5 @@
 package intrfazSet.v180_claseHastSet;
+
 import java.util.Objects;
 
 public class Cliente {
@@ -59,14 +60,30 @@ public class Cliente {
 
 
 
-	@Override public int hashCode() {
-		return Objects.hash(this.n_cuenta, this.nombre, this.saldo);
+	// Creaciòn de forma automatica con ecilpse de el metoddo Sobrescrito equals() y hashCode() para travajar con clases Propias ( usa el metodo heredado getClass())
+	@Override
+	public int hashCode() {
+		return Objects.hash(this.n_cuenta);
 	}
 
 
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj){
+			return true;
+		}
+		if (!(obj instanceof Cliente)){
 
-
+			return false;
+		}
+		Cliente other = (Cliente) obj;
+		System.out.println("---Cuenta repetida en Balance---");
+		System.out.println("Nombre Del Cliebnte: " + other.getNombre());
+		System.out.println("Numero de cuenta :" + other.n_cuenta);
+		System.out.println();
+		return Objects.equals(this.n_cuenta, other.n_cuenta);
+	}
 
 
 
