@@ -1,4 +1,4 @@
-package metodos.v181_182_hashCode_equals;
+package colecciones.v181_182_metodos_hashCode_equals;
 
 import java.util.Objects;
 

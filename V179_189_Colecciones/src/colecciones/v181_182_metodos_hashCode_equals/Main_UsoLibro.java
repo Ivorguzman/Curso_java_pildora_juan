@@ -1,4 +1,4 @@
-package metodos.v181_182_hashCode_equals;
+package colecciones.v181_182_metodos_hashCode_equals;
 
 public class Main_UsoLibro {
 	public static void main(String[] args) {
@@ -34,7 +34,7 @@ public class Main_UsoLibro {
 		 * System.out.println();
 		 * 
 		 * 
-		 * libro1 = libro2;
+		 * libro1 = libro2;// Ojo se verifica como apunta al miso Objeto.
 		 * if (libro1.equals(libro2)){
 		 * System.out.println("Libro1 con ISBN = " + libro1.getIsbn() + " es Igual al Libro2 con ISBN = " + libro2.getIsbn());
 		 * System.out.println("con  la sentencia  libro1 = libro2 ");

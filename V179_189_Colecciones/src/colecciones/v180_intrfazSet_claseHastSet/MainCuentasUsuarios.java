@@ -1,4 +1,4 @@
-package intrfazSet.v180_claseHastSet;
+package colecciones.v180_intrfazSet_claseHastSet;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,23 +15,30 @@ public class MainCuentasUsuarios {
 
 
 
-
-
 		/*
 		 * Aquí estamos diciendo:
-		 * 1. Set<Cliente>: Queremos una colección de objetos Cliente que no permita duplicados.
-		 * 2. clientesBanco: Este es el nombre de nuestra colección ( Tipo HashSet).
-		 * 3. new HashSet<Cliente>(): Estamos creando una nueva instancia de HashSet,
-		 * que es una implementación concreta de la interfaz Set.
+		 * 1. Set<Cliente>: Queremos una colección
+		 * de objetos Cliente que no permita duplicados.
+		 * 
+		 * 2. clientesBanco: Este es el nombre de
+		 * nuestra colección ( Tipo HashSet).
+		 * 
+		 * 3. new HashSet<Cliente>(): Estamos creando una nueva
+		 * instancia de HashSet, que es una implementación
+		 * concreta de la interfaz Set.
 		 * 
 		 * Resumen:
-		 * Interfaz (Set): Define qué métodos debe tener una clase, pero no cómo deben funcionar.
-		 * Clase concreta (HashSet): Proporciona una implementación concreta de los métodos definidos en la interfaz.
+		 * 1- Interfaz (Set): Define qué métodos debe
+		 * tener una clase, pero no cómo deben funcionar.
+		 * 
+		 * 2- Clase concreta (HashSet): Proporciona una implementación
+		 * concreta de los métodos definidos en la interfaz.
+		 * 
+		 * NOTA:
+		 * -Set- es una interfaz que no permite elementos duplicados.
+		 * -HashSet- es una clase que implementa la interfaz -Set-
+		 * -HashSet- No permite ordenamientos
 		 */
-
-		// -Set- es una interfaz que no permite elementos duplicados.
-		// -HashSet- es una clase que implementa la interfaz -Set-
-		// -HashSet- No permite ordenamientos
 		Set<Cliente> clientesBanco = new HashSet<>();
 
 
@@ -44,8 +51,10 @@ public class MainCuentasUsuarios {
 		clientesBanco.add(cl5);
 		clientesBanco.add(cl6);
 
+		/* clientesBanco.addAll(clientesBanco); */
 
-		// 4. Recorrer la colección con (for Mejorado[for ech]
+
+		// 4. Forma 1 de Recorrer la colección (for Mejorado[for ech]
 		// fore+Ctrl+spacio=crear forech
 		for (Cliente cliente : clientesBanco){
 

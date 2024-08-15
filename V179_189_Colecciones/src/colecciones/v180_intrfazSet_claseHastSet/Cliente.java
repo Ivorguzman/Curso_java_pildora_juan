@@ -1,4 +1,4 @@
-package intrfazSet.v180_claseHastSet;
+package colecciones.v180_intrfazSet_claseHastSet;
 
 import java.util.Objects;
 
@@ -66,10 +66,9 @@ public class Cliente {
 		return Objects.hash(this.n_cuenta);
 	}
 
-
-
 	@Override
 	public boolean equals(Object obj) {
+		// Validando que parametro recibido
 		if (this == obj){
 			return true;
 		}
@@ -78,15 +77,12 @@ public class Cliente {
 			return false;
 		}
 		Cliente other = (Cliente) obj;
-		System.out.println("---Cuenta repetida en Balance---");
+		System.out.println("---Cuenta repetida en Balance ---");
 		System.out.println("Nombre Del Cliebnte: " + other.getNombre());
 		System.out.println("Numero de cuenta :" + other.n_cuenta);
 		System.out.println();
 		return Objects.equals(this.n_cuenta, other.n_cuenta);
 	}
-
-
-
 
 }
 
